@@ -6,6 +6,7 @@
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import { CompositeScreenProps, NavigatorScreenParams } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import HomeScreen from './screens/HomeScreen';
 
 declare global {
   namespace ReactNavigation {
@@ -15,6 +16,7 @@ declare global {
 
 export type RootStackParamList = {
   Root: NavigatorScreenParams<RootTabParamList> | undefined;
+  HomeScreen: undefined;
   Modal: undefined;
   NotFound: undefined;
 };
