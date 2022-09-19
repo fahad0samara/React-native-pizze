@@ -7,8 +7,9 @@ import {
   responsiveWidth,
   responsiveFontSize,
 } from "react-native-responsive-dimensions";
+import { RootStackScreenProps } from '../types';
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}: RootStackScreenProps<"HomeScreen">) => {
   return (
     <View style={styles.GettingStartedPage}>
       <LinearGradient
@@ -39,12 +40,16 @@ const HomeScreen = () => {
           <Text style={styles.multiple3}>Doorstep</Text>
         </View>
         <Text style={styles.Txt403}>
-            We are here to help you with your daily needs and essentials at your doorstep
+          We are here to help you with your daily needs and essentials at your
+          doorstep
         </Text>
-        <TouchableOpacity style={styles.Button}>
-       
-            <Text style={styles.Txt022}>Get Started</Text>
-     
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("Root");
+          }}
+          style={styles.Button}
+        >
+          <Text style={styles.Txt022}>Get Started</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -67,8 +72,8 @@ const styles = StyleSheet.create({
     borderRadius: 22,
     backgroundColor: "white",
     /* url(https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/yrw3mljxp4l-2%3A4177?alt=media&token=24bc8f97-65d6-4a4a-bdad-c9c98ee5772f), linear-gradient(132.14deg, rgba(246,137,137,1) 0%, rgba(254,81,80,1) 100%, ) , linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)) */
-    width: 414,
-    height: 896,
+    width: responsiveWidth(4),
+    height: responsiveHeight(100),
   },
   DeliveryMan2: {
     position: "absolute",
@@ -109,7 +114,6 @@ const styles = StyleSheet.create({
     letterSpacing: 0,
   },
   multiple3: {
-    fontFamily: "Roboto",
     fontStyle: "normal",
     fontWeight: "bold",
 
@@ -118,7 +122,6 @@ const styles = StyleSheet.create({
     letterSpacing: 0,
   },
   Txt403: {
-    fontFamily: "Roboto",
     fontSize: 15,
     fontWeight: "bold",
     marginHorizontal: 40,
@@ -140,7 +143,7 @@ const styles = StyleSheet.create({
   },
   Txt022: {
     fontSize: 30,
-    fontFamily: "Inter, sans-serif",
+
     fontWeight: "600",
 
     color: "rgba(255, 255, 255, 1)",
