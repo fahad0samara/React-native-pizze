@@ -9,11 +9,13 @@ import {
   TextInput,
   TouchableOpacity,
   ActivityIndicator,
+  Text, View 
 } from "react-native";
+import * as Animatable from "react-native-animatable";
 import {BlurView} from "expo-blur";
 import React from "react";
 import EditScreenInfo from "../components/EditScreenInfo";
-import { Text, View } from "../components/Themed";
+
 
 import {RootTabScreenProps} from "../types";
 import {FontAwesome} from "@expo/vector-icons";
@@ -22,7 +24,13 @@ import ModalScreen from "./ModalScreen";
 import {images } from "../constants";
 import { restaurantData } from "../Data/RestaurantData";
 import { isLoading } from "expo-font";
+ import { renderItem } from '../components/Card';
 
+import {
+  responsiveHeight,
+  responsiveWidth,
+  responsiveFontSize,
+} from "react-native-responsive-dimensions";
 
 export default function TabOneScreen({
   navigation,
@@ -76,7 +84,7 @@ export default function TabOneScreen({
 
 
   const [categories, setCategories] = React.useState(categoryData);
-  const [selectedCategory, setSelectedCategory] = React.useState(null);
+  const [selectedCategory, setSelectedCategory] = React.useState();
   const [restaurants, setRestaurants] = React.useState(restaurantData);
  
   function onSelectCategory(category) {
@@ -98,23 +106,25 @@ export default function TabOneScreen({
     const renderItem = ({item}:any) => {
       return (
         <TouchableOpacity
-       
+          style={{
+            backgroundColor: "#000",
+          }}
           onPress={() => onSelectCategory(item)}
         >
           <Text
             style={{
-              marginTop: 20,
-              padding: 10,
-              fontSize: 20,
+              marginTop: responsiveHeight(0.5),
+              padding: responsiveWidth(2.5),
+              fontSize: responsiveFontSize(2),
+              marginLeft:3,
               borderRadius: 15,
-               
+
               fontWeight: "bold",
               alignItems: "center",
               textAlign: "center",
-            
-              backgroundColor:
-                selectedCategory?.id == item.id ? "#eab308" : "white",
-              color: selectedCategory?.id == item.id ? "#fff" : "black",
+
+              backgroundColor: selectedCategory?.id == item.id ? "#fff" : "#eab308",
+              color: selectedCategory?.id == item.id ? "#000" : "black",
             }}
           >
             {item.name}
@@ -124,9 +134,9 @@ export default function TabOneScreen({
     };
 
     return (
-      <View style={{padding: 10}}>
+      <View style={{padding: 10, backgroundColor: "#000",}}>
         <Text>Main</Text>
-        <Text >Categories</Text>
+        <Text>Categories</Text>
 
         <FlatList
           data={categories}
@@ -140,138 +150,7 @@ export default function TabOneScreen({
     );
   }
 
-  function renderRestaurantList() {
-    const renderItem = ({item}: any) => (
-      <TouchableOpacity
-        style={{
-          marginBottom: 20,
-          padding: 7,
-          borderRadius: 40,
-        }}
-      >
-        {/* Image */}
 
-        <ImageBackground
-          source={item.photo}
-          style={{
-            width: 175,
-            height: 250,
-            alignItems: "center",
-            justifyContent: "center",
-            borderRadius: 40,
-          }}
-        >
-          <BlurView
-            tint="dark"
-            intensity={90}
-            style={{
-              position: "absolute",
-              bottom: 0,
-              backgroundColor: "#eab308",
-              borderTopLeftRadius: 20,
-              borderTopRightRadius: 20,
-
-              width: "100%",
-              height: "40%",
-            }}
-          >
-            <View
-              style={{
-                marginTop: 10,
-                marginHorizontal: 5,
-
-                backgroundColor: "transport",
-                alignItems: "center",
-                justifyContent: "space-between",
-              }}
-            >
-              <Text
-                style={{
-                  fontSize: 20,
-
-                  color: "white",
-                }}
-              >
-                {item.name}
-              </Text>
-              {/* rating */}
-           
-              {/* time */}
-              <View
-                style={{
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  backgroundColor: "transparent",
-                }}
-              >
-                <Text
-                  style={{
-                    fontSize: 15,
-                    fontWeight: "bold",
-                    color: "white",
-                  }}
-                >
-                  {item.time}
-                </Text>
-                <FontAwesome
-                  name="clock-o"
-                  size={20}
-                  color="#eab308"
-                  style={{marginLeft: 5}}
-                />
-              </View>
-            </View>
-            {/* size */}
-            <View
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "center",
-                backgroundColor: "transparent",
-              }}
-            >
-              <Text
-                style={{
-                  fontSize: 15,
-                  fontWeight: "bold",
-                  color: "white",
-                }}
-              >
-                {item.size} / {item.people}
-              </Text>
-              <FontAwesome
-                name="user"
-                size={20}
-                color="#eab308"
-                style={{marginLeft: 5}}
-              />
-              {/* price */}
-            
-
-            </View>
-          </BlurView>
-        </ImageBackground>
-
-        {/* Restaurant Info */}
-      </TouchableOpacity>
-    );
-
-    return (
-      <FlatList
-        removeClippedSubviews={true}
-        data={restaurants}
-        initialNumToRender={4}
-
-     
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        keyExtractor={item => `${item.id}`}
-        renderItem={renderItem}
-        contentContainerStyle={{}}
-      />
-    );
-  }
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
@@ -280,6 +159,7 @@ export default function TabOneScreen({
             flexDirection: "row",
             justifyContent: "space-between",
             alignItems: "center",
+            backgroundColor: "#000",
             padding: 20,
           }}
         >
@@ -291,6 +171,7 @@ export default function TabOneScreen({
             onPress={() => navigation.navigate("Modal")}
             style={({pressed}) => ({
               opacity: pressed ? 0.5 : 1,
+              backgroundColor: "#000",
             })}
           >
             <FontAwesome
@@ -352,9 +233,22 @@ export default function TabOneScreen({
             }}
           />
         </Pressable>
-      
+
         {renderMainCategories()}
-        {renderRestaurantList()}
+
+        {
+          // render the first card
+        }
+        <FlatList
+          removeClippedSubviews={true}
+          data={restaurants}
+          initialNumToRender={4}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          keyExtractor={item => `${item.id}`}
+          renderItem={renderItem}
+          contentContainerStyle={{}}
+        />
       </ScrollView>
     </SafeAreaView>
   );
@@ -366,6 +260,7 @@ export default function TabOneScreen({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#000",
   },
   blurContainer: {
     flex: 1,
