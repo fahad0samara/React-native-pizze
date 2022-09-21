@@ -1,63 +1,59 @@
 
-const avatar_1 = require("../assets/images/avatar-1.jpg");
-const avatar_2 = require("../assets/images/avatar-2.jpg");
-const avatar_3 = require("../assets/images/avatar-3.jpg");
-const avatar_4 = require("../assets/images/avatar-4.jpg");
-const avatar_5 = require("../assets/images/avatar-5.jpg");
-const baked_fries = require("../assets/images/baked-fries.jpg");
-const burger_restaurant_1 = require("../assets/images/burger-restaurant.jpg");
-const burger_restaurant_2 = require("../assets/images/burger-restaurant-2.jpg");
-const chicago_hot_dog = require("../assets/images/chicago-hot-dog.jpg");
-const crispy_chicken_burger = require("../assets/images/crispy-chicken-burger.jpg");
-const fries_restaurant = require("../assets/images/fries-restaurant.jpg");
-const hawaiian_pizza = require("../assets/images/hawaiian-pizza.jpg");
-const honey_mustard_chicken_burger = require("../assets/images/honey-mustard-chicken-burger.jpg");
-const hot_dog_restaurant = require("../assets/images/hot-dog-restaurant.jpg");
-const ice_kacang = require("../assets/images/ice-kacang.jpg");
-const japanese_restaurant = require("../assets/images/japanese-restaurant.jpg");
-const kek_lapis_shop = require("../assets/images/kek-lapis-shop.jpg");
-const kek_lapis = require("../assets/images/kek-lapis.jpg");
-const kolo_mee = require("../assets/images/kolo-mee.jpg");
-const nasi_briyani_mutton = require("../assets/images/nasi-briyani-mutton.jpg");
-const nasi_lemak = require("../assets/images/nasi-lemak.jpg");
-const noodle_shop = require("../assets/images/noodle-shop.jpg");
-const pizza_restaurant = require("../assets/images/pizza-restaurant.jpg");
-const pizza = require("../assets/images/pizza.jpg");
-const salad = require("../assets/images/salad.jpg");
-const sarawak_laksa = require("../assets/images/sarawak-laksa.jpg");
-const sushi = require("../assets/images/sushi.jpg");
-const teh_c_peng = require("../assets/images/teh-c-peng.jpg");
-const tomato_pasta = require("../assets/images/tomato-pasta.jpg");
+const neapolitan = require("../assets/images/neapolitan.jpg");
+const neapolitan1 = require("../assets/images/neapolitan1.jpg");
+const neapolitan2 = require("../assets/images/neapolitan2.jpg");
+const neapolitan3 = require("../assets/images/neapolitan3.jpg");
+const Chicago = require("../assets/images/Chicago.jpg");
+const Chicago1 = require("../assets/images/Chicago1.jpg");
+const Chicago2 = require("../assets/images/Chicago2.jpg");
+const Chicago3 = require("../assets/images/Chicago3.jpg");
+const NewYork = require("../assets/images/NewYork.jpg");
+const NewYork1 = require("../assets/images/NewYork1.jpg");
+const NewYork2 = require("../assets/images/NewYork2.jpg");
+const NewYork3 = require("../assets/images/NewYork3.jpg");
+const Sicilian = require("../assets/images/Sicilian.jpg");
+const Sicilian1 = require("../assets/images/Sicilian1.jpg");
+const Sicilian2 = require("../assets/images/Sicilian2.jpg");
+const Sicilian3 = require("../assets/images/Sicilian3.jpg");
+const Greek = require("../assets/images/Greek.jpg");
+const Greek1 = require("../assets/images/Greek1.jpg");
+const Greek2 = require("../assets/images/Greek2.jpg");
+const Greek3 = require("../assets/images/Greek3.jpg");
+const California = require("../assets/images/California.jpg");
+const California1 = require("../assets/images/California1.jpg");
+const California2 = require("../assets/images/California2.jpg");
 
+const Detroit = require("../assets/images/Detroit.jpg");
+const Detroit1 = require("../assets/images/Detroit1.jpg");
+const Detroit2 = require("../assets/images/Detroit2.jpg");
+const Detroit3 = require("../assets/images/Detroit3.jpg");
 export default {
-    avatar_1,
-    avatar_2,
-    avatar_3,
-    avatar_4,
-    avatar_5,
-    baked_fries,
-    burger_restaurant_1,
-    burger_restaurant_2,
-    chicago_hot_dog,
-    crispy_chicken_burger,
+  neapolitan,
+  neapolitan1,
+  neapolitan2,
+  neapolitan3,
+  Chicago,
+  Chicago1,
+  Chicago2,
+  Chicago3,
+  NewYork,
+  NewYork1,
+  NewYork2,
+  NewYork3,
+  Sicilian,
+  Sicilian1,
+  Sicilian2,
+  Sicilian3,
+  Greek,
+  Greek1,
+  Greek2,
+  Greek3,
+  California,
+  California1,
+  California2,
 
-    fries_restaurant,
-    hawaiian_pizza,
-    honey_mustard_chicken_burger,
-    hot_dog_restaurant,
-    ice_kacang,
-
-    japanese_restaurant,
-    kek_lapis_shop,
-    kek_lapis,
-    kolo_mee,
-    nasi_briyani_mutton,
-    nasi_lemak,
-    noodle_shop,
-    pizza_restaurant,
-    pizza,
-    sarawak_laksa,
-    sushi,
-    teh_c_peng,
-    tomato_pasta,
-}
+  Detroit,
+  Detroit1,
+  Detroit2,
+  Detroit3,
+};
