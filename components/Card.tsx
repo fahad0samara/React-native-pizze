@@ -14,7 +14,7 @@ import {
 import * as Animatable from "react-native-animatable";
 import { BlurView } from "expo-blur";
 import React from "react";
-import EditScreenInfo from "./EditScreenInfo";
+
 
 
 import { RootTabScreenProps } from "../types";
@@ -31,10 +31,11 @@ import {
 } from "react-native-responsive-dimensions";
 
 
-export const renderItem = ({item}: any) => (
+export const renderItem = ({ item }: any) => (
+
   <TouchableOpacity
     style={{
-      marginBottom: 20,
+   
       padding: responsiveWidth(3),
       borderRadius: 15,
 

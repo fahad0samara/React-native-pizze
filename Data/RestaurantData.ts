@@ -5,21 +5,6 @@ const affordable = 1;
 const fairPrice = 2;
 const expensive = 3
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export const restaurantData = [
     {
         id: 1,
@@ -46,8 +31,8 @@ export const restaurantData = [
         name: "Pizza Margherita",
         rating: 3.5,
         size: 'medium',
-    people: '3-5',
-      price: '$ 6.6',
+        people: '3-5',
+        price: '$ 6.6',
         categories: [1],
         priceRating: expensive,
         photo: images.neapolitan1,
@@ -100,9 +85,9 @@ export const restaurantData = [
         rating: 4.8,
         categories: [2],
         size: 'medium',
-    people: '3-5',
-      price: '$ 6.6',
-      
+        people: '3-5',
+        price: '$ 6.6',
+
         priceRating: affordable,
         photo: images.Chicago,
         time: "15 - 20 min",
@@ -190,9 +175,9 @@ export const restaurantData = [
         name: "Pizza efichi",
         rating: 4.6,
         size: 'medium',
-    people: '3-5',
-      price: '$ 6.6',
-     
+        people: '3-5',
+        price: '$ 6.6',
+
         categories: [3],
         priceRating: affordable,
         photo: images.Sicilian1,
@@ -231,8 +216,8 @@ export const restaurantData = [
         photo: images.Sicilian3,
         time: "35 - 40 min",
         size: 'medium',
-    people: '3-5',
-      price: '$ 6.6',
+        people: '3-5',
+        price: '$ 6.6',
         location: {
             latitude: 1.5573478487252896,
             longitude: 110.35568783282145,
@@ -267,8 +252,8 @@ export const restaurantData = [
         photo: images.Greek1,
         time: "3 - 4 min",
         size: 'medium',
-    people: '3-5',
-      price: '$ 6.6',
+        people: '3-5',
+        price: '$ 6.6',
         location: {
             latitude: 1.5573478487252896,
             longitude: 110.35568783282145,
@@ -299,9 +284,9 @@ export const restaurantData = [
         name: "Pizza Fugazzeta",
         rating: 4.2,
         size: 'medium',
-    people: '3-5',
-      price: '$ 6.6',
-        
+        people: '3-5',
+        price: '$ 6.6',
+
         categories: [4],
         priceRating: affordable,
         photo: images.Greek3,
@@ -348,7 +333,7 @@ export const restaurantData = [
         categories: [5],
         priceRating: affordable,
         photo: images.California,
-   
+
         location: {
             latitude: 1.5573478487252896,
             longitude: 110.35568783282145,
@@ -405,8 +390,8 @@ export const restaurantData = [
         rating: 4.8,
         categories: [5],
         size: 'medium',
-    people: '3-5',
-      price: '$ 6.6',
+        people: '3-5',
+        price: '$ 6.6',
         priceRating: affordable,
         photo: images.California1,
         time: "3 - 4 min",
@@ -494,8 +479,8 @@ export const restaurantData = [
         photo: images.Detroit,
         time: "2 - 4 min",
         size: 'medium',
-    people: '3-5',
-      price: '$ 6.6',
+        people: '3-5',
+        price: '$ 6.6',
         location: {
             latitude: 1.5573478487252896,
             longitude: 110.35568783282145,
@@ -580,8 +565,8 @@ export const restaurantData = [
         photo: images.Detroit2,
         time: "2 - 4 min",
         size: 'medium',
-    people: '3-5',
-      price: '$ 6.6',
+        people: '3-5',
+        price: '$ 6.6',
         location: {
             latitude: 1.5573478487252896,
             longitude: 110.35568783282145,
@@ -625,7 +610,7 @@ export const restaurantData = [
         priceRating: affordable,
         photo: images.Detroit3,
         time: "2 - 4 min",
-        
+
         location: {
             latitude: 1.5573478487252896,
             longitude: 110.35568783282145,

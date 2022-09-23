@@ -14,7 +14,7 @@ import {
 import * as Animatable from "react-native-animatable";
 import {BlurView} from "expo-blur";
 import React from "react";
-import EditScreenInfo from "../components/EditScreenInfo";
+
 
 
 import {RootTabScreenProps} from "../types";
@@ -31,6 +31,10 @@ import {
   responsiveWidth,
   responsiveFontSize,
 } from "react-native-responsive-dimensions";
+import {renderItemm} from "../components/PopularPizaa";
+
+
+
 
 export default function TabOneScreen({
   navigation,
@@ -134,9 +138,9 @@ export default function TabOneScreen({
     };
 
     return (
-      <View style={{padding: 10, backgroundColor: "#000",}}>
-        <Text>Main</Text>
-        <Text>Categories</Text>
+      <View >
+      
+    
 
         <FlatList
           data={categories}
@@ -249,6 +253,83 @@ export default function TabOneScreen({
           renderItem={renderItem}
           contentContainerStyle={{}}
         />
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            backgroundColor: "#000",
+            padding: 20,
+          }}
+        >
+          <Text
+            style={{
+              fontSize: responsiveFontSize(3),
+              fontWeight: "bold",
+              color: "#fff",
+              alignItems: "center",
+              textAlign: "center",
+            }}
+          >
+            Top pizza
+          </Text>
+          <TouchableOpacity onPress={() => navigation.navigate("TabTwo")}>
+            <View
+              style={{
+                backgroundColor: "#000",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: responsiveFontSize(2.3),
+                  fontWeight: "bold",
+                  color: "#eab308",
+                  alignItems: "center",
+                  textAlign: "center",
+                  marginRight: 10,
+                }}
+              >
+                view all
+              </Text>
+              <FontAwesome
+                style={{
+                  backgroundColor: "#eab308",
+                  borderRadius: 50,
+                  padding: 1.5,
+                  shadowColor: "#fff",
+                  shadowOffset: {
+                    width: 0,
+                    height: 12,
+                  },
+                  shadowOpacity: 12,
+                  shadowRadius: 3.84,
+                  elevation: 9,
+                  color: "#fff",
+
+                  fontWeight: "bold",
+
+                  alignItems: "center",
+                  textAlign: "center",
+                }}
+                name="angle-right"
+                size={30}
+                color="#fff"
+              />
+            </View>
+          </TouchableOpacity>
+        </View>
+        <FlatList
+          removeClippedSubviews={true}
+          data={restaurants}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          keyExtractor={item => `${item.id}`}
+          renderItem={renderItemm}
+          contentContainerStyle={{}}
+        />
       </ScrollView>
     </SafeAreaView>
   );
@@ -270,11 +351,13 @@ const styles = StyleSheet.create({
   welcomeContainer: {
     marginLeft: 1,
     fontWeight: "bold",
+
     marginTop: 10,
   },
   title: {
     fontSize: 20,
     fontWeight: "bold",
+    color: "#fff",
   },
 
   getStartedText: {
