@@ -31,11 +31,9 @@ import {
 } from "react-native-responsive-dimensions";
 
 
-export const renderItem = ({ item }: any) => (
-
+export const renderCard = ({item}: any) => (
   <TouchableOpacity
     style={{
-   
       padding: responsiveWidth(3),
       borderRadius: 15,
 
@@ -126,8 +124,10 @@ export const renderItem = ({ item }: any) => (
           <Text
             style={{
               fontSize: responsiveFontSize(2),
+              fontWeight: "bold",
+              
 
-              color: "white",
+              color: "#eab308",
             }}
           >
             {item.name}
@@ -145,9 +145,9 @@ export const renderItem = ({ item }: any) => (
           >
             <Text
               style={{
-                fontSize: 15,
+                fontSize: responsiveFontSize(2),
                 fontWeight: "bold",
-                color: "white",
+                color: "#eab308",
               }}
             >
               {item.time}
@@ -155,7 +155,7 @@ export const renderItem = ({ item }: any) => (
             <FontAwesome
               name="clock-o"
               size={20}
-              color="#eab308"
+              color="#fff"
               style={{marginLeft: 5}}
             />
           </View>
@@ -171,9 +171,9 @@ export const renderItem = ({ item }: any) => (
         >
           <Text
             style={{
-              fontSize: 15,
+              fontSize: responsiveFontSize(2.5),
               fontWeight: "bold",
-              color: "white",
+              color: "#eab308",
             }}
           >
             {item.size} / {item.people}
@@ -181,7 +181,7 @@ export const renderItem = ({ item }: any) => (
           <FontAwesome
             name="user"
             size={20}
-            color="#eab308"
+            color="#fff"
             style={{marginLeft: 5}}
           />
           {/* price */}

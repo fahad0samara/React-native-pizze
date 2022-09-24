@@ -4,13 +4,56 @@ import { images } from "../constants";
 const affordable = 1;
 const fairPrice = 2;
 const expensive = 3
+export const TopPizza = [
+    {
+        id: 1,
+        name: "Prosciutto",
+        rating: 5,
+        size: 'small',
+        photo: images.TopImgae,
+        people: '1-4',
+        price: '$ 5',
 
+    },
+    {
+        id: 2,
+        name: "ortolana",
+        rating: 5,
+        size: 'small',
+        photo: images.TopImgae0,
+        people: '1-4',
+        price: '$ 6',
+
+    },
+    {
+        id: 3,
+        name: "rustica",
+        rating: 5,
+        size: 'small',
+        photo: images.TopImgae1,
+        people: '1-4',
+        price: '$ 3.5',
+
+    },
+    {
+        id: 4,
+        name: "Apizza",
+        rating: 5,
+        size: 'small',
+        photo: images.TopImgae2,
+        people: '1-4',
+        price: '$ 7.6',
+
+    },
+
+]
 export const restaurantData = [
     {
         id: 1,
         name: "Pizza Marinara",
         rating: 4.8,
         categories: [1],
+        Top: true,
         priceRating: affordable,
         size: 'small',
         people: '1-4',
@@ -34,6 +77,7 @@ export const restaurantData = [
         people: '3-5',
         price: '$ 6.6',
         categories: [1],
+        Top: true,
         priceRating: expensive,
         photo: images.neapolitan1,
         time: "15 - 20 min",
@@ -106,6 +150,7 @@ export const restaurantData = [
         priceRating: affordable,
         size: 'large',
         people: '6-7',
+        Top: true,
         price: '$ 9.4',
         photo: images.Chicago1,
         time: "5 - 7 min",
@@ -141,6 +186,7 @@ export const restaurantData = [
         categories: [2],
         size: 'large',
         people: '6-7',
+        Top: true,
         price: '$ 9.4',
         priceRating: affordable,
         photo: images.Chicago3,
@@ -160,6 +206,7 @@ export const restaurantData = [
         people: '6-7',
         price: '$ 9.4',
         categories: [3],
+                Top: true,
         priceRating: affordable,
         photo: images.Sicilian,
         time: "35 - 40 min",
@@ -179,6 +226,7 @@ export const restaurantData = [
         price: '$ 6.6',
 
         categories: [3],
+        Top: true,
         priceRating: affordable,
         photo: images.Sicilian1,
         time: "35 - 40 min",
@@ -213,6 +261,7 @@ export const restaurantData = [
         rating: 3.6,
         categories: [3],
         priceRating: affordable,
+        Top: true,
         photo: images.Sicilian3,
         time: "35 - 40 min",
         size: 'medium',
@@ -432,6 +481,7 @@ export const restaurantData = [
         name: "Pizza carbonara",
         rating: 4.8,
         categories: [5],
+        Top: true,
         size: 'small',
         people: '1-4',
         price: '$ 4',
@@ -644,4 +694,31 @@ export const restaurantData = [
         // ],
     },
 
+];
+
+export const categoryData = [
+    {
+        id: 1,
+        name: "Neapolitan ",
+    },
+    {
+        id: 2,
+        name: "Chicago ",
+    },
+    {
+        id: 3,
+        name: "New York-Style",
+    },
+    {
+        id: 4,
+        name: "Sicilian",
+    },
+    {
+        id: 5,
+        name: "Greek ",
+    },
+    {
+        id: 6,
+        name: "California ",
+    },
 ];

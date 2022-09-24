@@ -27,6 +27,11 @@ const Detroit = require("../assets/images/Detroit.jpg");
 const Detroit1 = require("../assets/images/Detroit1.jpg");
 const Detroit2 = require("../assets/images/Detroit2.jpg");
 const Detroit3 = require("../assets/images/Detroit3.jpg");
+const TopImgae = require("../assets/images/TopImgae.jpg");
+const TopImgae0 = require("../assets/images/TopImgae0.jpg");
+const TopImgae1 = require("../assets/images/TopImgae1.jpg");
+const TopImgae2 = require("../assets/images/TopImgae2.jpg");
+
 export default {
   neapolitan,
   neapolitan1,
@@ -56,4 +61,8 @@ export default {
   Detroit1,
   Detroit2,
   Detroit3,
+  TopImgae,
+  TopImgae0,
+  TopImgae1,
+  TopImgae2
 };

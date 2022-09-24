@@ -30,6 +30,37 @@ export type RootTabParamList = {
   TabOne: undefined;
   TabTwo: undefined;
 };
+export type RootCategory = {
+id: number;
+    name: string;
+    rating: number;
+    categories: number[];
+    priceRating: number;
+    size: string;
+    people: string;
+    price: string;
+    photo: any;
+    time: string;
+    location: {
+        latitude: number;
+        longitude: number;
+    };
+  description: string;
+  item: {
+    name: string;
+    price: string;
+    photo: any;
+
+  }[]
+  | undefined;
+
+  
+
+};
+  
+
+
+
 
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<
   BottomTabScreenProps<RootTabParamList, Screen>,

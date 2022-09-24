@@ -9,32 +9,29 @@ import {
   TextInput,
   TouchableOpacity,
   ActivityIndicator,
-  Text, View 
+  Text,
+  View,
 } from "react-native";
 import * as Animatable from "react-native-animatable";
 import {BlurView} from "expo-blur";
 import React from "react";
 
-
-
 import {RootTabScreenProps} from "../types";
 import {FontAwesome} from "@expo/vector-icons";
 import ModalScreen from "./ModalScreen";
 
-import {images } from "../constants";
-import { restaurantData } from "../Data/RestaurantData";
-import { isLoading } from "expo-font";
- import { renderItem } from '../components/Card';
+import {images} from "../constants";
+import {restaurantData, TopPizza, categoryData} from "../Data/RestaurantData";
+import {isLoading} from "expo-font";
 
 import {
   responsiveHeight,
   responsiveWidth,
   responsiveFontSize,
 } from "react-native-responsive-dimensions";
-import {renderItemm} from "../components/PopularPizaa";
-
-
-
+import {renderTop} from "../components/PopularPizaa";
+import {renderCard} from "../components/Card";
+import New from "./New";
 
 export default function TabOneScreen({
   navigation,
@@ -53,45 +50,14 @@ export default function TabOneScreen({
 
   // Dummy Datas
 
-
-
-  const categoryData = [
-    {
-      id: 1,
-      name: "Neapolitan ",
-    },
-    {
-      id: 2,
-      name: "Chicago ",
-    },
-    {
-      id: 3,
-      name: "New York-Style",
-    },
-    {
-      id: 4,
-      name: "Sicilian",
-    },
-    {
-      id: 5,
-      name: "Greek ",
-    },
-    {
-      id: 6,
-      name: "California ",
-    },
-  
-
-  ];
-
   // price rating
-
 
   const [categories, setCategories] = React.useState(categoryData);
   const [selectedCategory, setSelectedCategory] = React.useState();
   const [restaurants, setRestaurants] = React.useState(restaurantData);
- 
-  function onSelectCategory(category) {
+  const [topPizza, setTopPizza] = React.useState(TopPizza);
+
+  function onSelectCategory(category: any) {
     //filter restaurant
     let restaurantList = restaurantData.filter(a =>
       a.categories.includes(category.id)
@@ -102,58 +68,33 @@ export default function TabOneScreen({
     setSelectedCategory(category);
   }
 
+  const RenderCategories = ({item}: any) => (
+    <TouchableOpacity
+      style={{
+        backgroundColor: "#000",
+      }}
+      onPress={() => onSelectCategory(item)}
+    >
+      <Text
+        style={{
+          marginTop: responsiveHeight(0.5),
+          padding: responsiveWidth(2.5),
+          fontSize: responsiveFontSize(2),
+          marginLeft: 3,
+          borderRadius: 15,
 
+          fontWeight: "bold",
+          alignItems: "center",
+          textAlign: "center",
 
-
-
-  function renderMainCategories() {
-    const renderItem = ({item}:any) => {
-      return (
-        <TouchableOpacity
-          style={{
-            backgroundColor: "#000",
-          }}
-          onPress={() => onSelectCategory(item)}
-        >
-          <Text
-            style={{
-              marginTop: responsiveHeight(0.5),
-              padding: responsiveWidth(2.5),
-              fontSize: responsiveFontSize(2),
-              marginLeft:3,
-              borderRadius: 15,
-
-              fontWeight: "bold",
-              alignItems: "center",
-              textAlign: "center",
-
-              backgroundColor: selectedCategory?.id == item.id ? "#fff" : "#eab308",
-              color: selectedCategory?.id == item.id ? "#000" : "black",
-            }}
-          >
-            {item.name}
-          </Text>
-        </TouchableOpacity>
-      );
-    };
-
-    return (
-      <View >
-      
-    
-
-        <FlatList
-          data={categories}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          keyExtractor={item => `${item.id}`}
-          renderItem={renderItem}
-          contentContainerStyle={{paddingVertical: 20}}
-        />
-      </View>
-    );
-  }
-
+          backgroundColor: selectedCategory?.id == item.id ? "#fff" : "#eab308",
+          color: selectedCategory?.id == item.id ? "#000" : "black",
+        }}
+      >
+        {item.name}
+      </Text>
+    </TouchableOpacity>
+  );
 
   return (
     <SafeAreaView style={styles.container}>
@@ -238,7 +179,17 @@ export default function TabOneScreen({
           />
         </Pressable>
 
-        {renderMainCategories()}
+        {
+          // RenderCategories
+        }
+        <FlatList
+          data={categories}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          keyExtractor={item => `${item.id}`}
+          renderItem={RenderCategories}
+          contentContainerStyle={{paddingVertical: 20}}
+        />
 
         {
           // render the first card
@@ -250,7 +201,7 @@ export default function TabOneScreen({
           horizontal
           showsHorizontalScrollIndicator={false}
           keyExtractor={item => `${item.id}`}
-          renderItem={renderItem}
+          renderItem={renderCard}
           contentContainerStyle={{}}
         />
         <View
@@ -323,20 +274,18 @@ export default function TabOneScreen({
         </View>
         <FlatList
           removeClippedSubviews={true}
-          data={restaurants}
+          data={topPizza}
           horizontal
           showsHorizontalScrollIndicator={false}
           keyExtractor={item => `${item.id}`}
-          renderItem={renderItemm}
+          renderItem={renderTop}
           contentContainerStyle={{}}
         />
+        <New/>
       </ScrollView>
     </SafeAreaView>
   );
 }
-       
-       
-   
 
 const styles = StyleSheet.create({
   container: {
