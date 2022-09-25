@@ -47,6 +47,49 @@ export const TopPizza = [
     },
 
 ]
+export const newPizz = [
+    {
+        id: 1,
+        name: "Pizza ortolan",
+        rating: 3.6,
+        size: 'small',
+        photo: images.newPizz,
+        people: '1-4',
+        price: '$ 4.1',
+
+    },
+    {
+        id: 2,
+        name: "Pizza rustical",
+        rating: 4,
+        size: 'small',
+        photo: images.newPizz0,
+        people: '1-4',
+        price: '$ 6',
+
+    },
+    {
+        id: 3,
+        name: "Tarte flambée",
+        rating: 4.5,
+        size: 'small',
+        photo: images.newPizz1,
+        people: '1-4',
+        price: '$ 5',
+
+    },
+    {
+        id: 4,
+        name: "pesto Genovese",
+        rating: 4.2,
+        size: 'small',
+        photo: images.newPizz2,
+        people: '1-4',
+        price: '$ 7.6',
+
+    },
+
+]
 export const restaurantData = [
     {
         id: 1,

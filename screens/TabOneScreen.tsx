@@ -32,6 +32,7 @@ import {
 import {renderTop} from "../components/PopularPizaa";
 import {renderCard} from "../components/Card";
 import New from "./New";
+import { renderNew } from "../components/Card2";
 
 export default function TabOneScreen({
   navigation,
@@ -201,7 +202,7 @@ export default function TabOneScreen({
           horizontal
           showsHorizontalScrollIndicator={false}
           keyExtractor={item => `${item.id}`}
-          renderItem={renderCard}
+          renderItem={renderNew}
           contentContainerStyle={{}}
         />
         <View
@@ -281,7 +282,7 @@ export default function TabOneScreen({
           renderItem={renderTop}
           contentContainerStyle={{}}
         />
-        <New/>
+        <New />
       </ScrollView>
     </SafeAreaView>
   );

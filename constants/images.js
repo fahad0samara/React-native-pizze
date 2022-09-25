@@ -31,6 +31,11 @@ const TopImgae = require("../assets/images/TopImgae.jpg");
 const TopImgae0 = require("../assets/images/TopImgae0.jpg");
 const TopImgae1 = require("../assets/images/TopImgae1.jpg");
 const TopImgae2 = require("../assets/images/TopImgae2.jpg");
+const newPizz = require("../assets/images/newPizz.jpg");
+const newPizz0 = require("../assets/images/newPizz0.jpg");
+const newPizz1 = require("../assets/images/newPizz1.jpg");
+const newPizz2 = require("../assets/images/newPizz2.jpg");
+
 
 export default {
   neapolitan,
@@ -64,5 +69,9 @@ export default {
   TopImgae,
   TopImgae0,
   TopImgae1,
-  TopImgae2
+  TopImgae2,
+  newPizz,
+  newPizz0,
+  newPizz1,
+  newPizz2
 };

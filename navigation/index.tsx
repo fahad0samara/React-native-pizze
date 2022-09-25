@@ -13,6 +13,7 @@ import {
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import * as React from "react";
 import {ColorSchemeName, Pressable} from "react-native";
+import Details from "../screens/Details";
 
 
 import HomeScreen from "../screens/HomeScreen";
@@ -59,6 +60,11 @@ function RootNavigator() {
       <Stack.Screen
         name="Root"
         component={BottomTabNavigator}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Details"
+        component={Details}
         options={{headerShown: false}}
       />
       <Stack.Screen

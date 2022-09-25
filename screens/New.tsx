@@ -21,7 +21,7 @@ import {FontAwesome} from "@expo/vector-icons";
 import ModalScreen from "./ModalScreen";
 
 import {images} from "../constants";
-import {restaurantData, TopPizza, categoryData} from "../Data/RestaurantData";
+import {newPizz} from "../Data/RestaurantData";
 import {isLoading} from "expo-font";
 
 import {
@@ -32,6 +32,7 @@ import {
 
 import {renderCard} from "../components/Card";
 import { renderNew } from "../components/Card2";
+
 
 
 const New = ({navigation}:any) => {
@@ -106,14 +107,14 @@ const New = ({navigation}:any) => {
         </TouchableOpacity>
       </View>
       <FlatList
-        data={restaurantData}
+        data={newPizz}
         renderItem={renderNew}
-        keyExtractor={item => item.id}
+        keyExtractor={item => `${item.id}`}
         horizontal
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={{
-          paddingVertical: 20,
-          paddingLeft: 20,
+          paddingVertical: 5,
+          paddingLeft: 15,
         }}
       />
     </>

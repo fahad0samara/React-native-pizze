@@ -28,14 +28,105 @@ import {
   responsiveWidth,
   responsiveFontSize,
 } from "react-native-responsive-dimensions";
-export const renderNew = ({item, navigation}: any) => (
-  <TouchableOpacity onPress={() => navigation.navigate("DetailsScreen", item)}>
+import { useNavigation } from "@react-navigation/native";
+
+
+
+export const renderNew = ({item, navigation}: any) => {
+  return (
+    <TouchableOpacity onPress={() => navigation.navigate("Details")}>
+      <BlurView intensity={5} tint="dark" style={style.card}>
+        <Image
+          source={item.photo}
+          style={{
+            height: responsiveHeight(20),
+            width: "100%",
+            borderBottomRightRadius: 10,
+          }}
+        />
+        <Animatable.View
+          animation="pulse"
+          easing="ease-out"
+          iterationCount="infinite"
+          style={{
+            position: "absolute",
+            right: 4,
+            top: 5,
+            backgroundColor: "#fff",
+            borderBottomStartRadius: 20,
+            borderTopEndRadius: 20,
+            overflow: "hidden",
+          }}
+        >
+          <BlurView
+            tint="dark"
+            intensity={10}
+            style={{
+              flexDirection: "row",
+              padding: 10,
+            }}
+          >
+            <FontAwesome
+              style={{
+                marginLeft: 5,
+              }}
+              name="newspaper-o"
+              color={"#yellow"}
+              size={20}
+            />
+            <Animatable.Text
+              style={{
+                color: "green",
+                fontSize: responsiveFontSize(2),
+                fontStyle: "italic",
+                fontWeight: "bold",
+                marginLeft: 5,
+              }}
+            >
+              New
+            </Animatable.Text>
+          </BlurView>
+        </Animatable.View>
+        <Text style={style.cardName}>{item.name}</Text>
+        <View
+          style={{
+            marginTop: 5,
+            flexDirection: "row",
+            justifyContent: "space-between",
+          }}
+        >
+          <Text style={style.price}>{item.price}</Text>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              marginHorizontal: 15,
+            }}
+          >
+            <FontAwesome name="star" color={"yellow"} size={18} />
+            <Text style={style.rating}>{item.rating}</Text>
+          </View>
+        </View>
+      </BlurView>
+    </TouchableOpacity>
+  );
+};
+
+
+
+export const renderFirstCard = ({item, navigation}: any) => (
+  <TouchableOpacity
+    onPress={() => {
+      navigation.navigate("Details");
+    }}
+  >
     <BlurView intensity={5} tint="dark" style={style.card}>
       <Image
         source={item.photo}
         style={{
           height: responsiveHeight(20),
           width: "100%",
+          borderBottomRightRadius: 10,
         }}
       />
       <Animatable.View
@@ -45,8 +136,8 @@ export const renderNew = ({item, navigation}: any) => (
         style={{
           position: "absolute",
           right: 4,
-            top: 5,
-            backgroundColor: "#fff",
+          top: 5,
+          backgroundColor: "#eab308",
           borderBottomStartRadius: 20,
           borderTopEndRadius: 20,
           overflow: "hidden",
@@ -60,23 +151,16 @@ export const renderNew = ({item, navigation}: any) => (
             padding: 10,
           }}
         >
-          <FontAwesome
-            style={{
-              marginLeft: 5,
-            }}
-            name="newspaper-o"
-            color={"#eab308"}
-            size={20}
-          />
           <Animatable.Text
             style={{
-                            color: "green",
-                            fontSize: responsiveFontSize(2),
-            fontStyle: "italic",
+              color: "#fff",
+              fontSize: responsiveFontSize(2),
+              fontStyle: "italic",
+              fontWeight: "bold",
               marginLeft: 5,
             }}
           >
-            New
+            {item.size}
           </Animatable.Text>
         </BlurView>
       </Animatable.View>
@@ -89,7 +173,13 @@ export const renderNew = ({item, navigation}: any) => (
         }}
       >
         <Text style={style.price}>{item.price}</Text>
-        <View style={{flexDirection: "row", alignItems: "center"}}>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            marginHorizontal: 15,
+          }}
+        >
           <FontAwesome name="star" color={"yellow"} size={18} />
           <Text style={style.rating}>{item.rating}</Text>
         </View>
@@ -101,12 +191,12 @@ const style = StyleSheet.create({
   card: {
     height: responsiveHeight(30),
 
-        elevation: 10,
-        shadowColor: "#eab308",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
+    elevation: 5,
+    shadowColor: "#eab308",
+    shadowOffset: {
+      width: 5,
+      height: 6,
+    },
     width: responsiveWidth(45),
     marginRight: 20,
     padding: 10,
@@ -115,6 +205,7 @@ const style = StyleSheet.create({
   },
   cardName: {
     marginTop: 10,
+
     fontSize: responsiveFontSize(2.3),
     color: "#eab308",
     fontWeight: "bold",
@@ -123,10 +214,13 @@ const style = StyleSheet.create({
     fontWeight: "bold",
     color: "#eab308",
     fontSize: responsiveFontSize(2.3),
+    fontStyle: "italic",
   },
   rating: {
     fontWeight: "bold",
     color: "#eab308",
-    fontSize: 12,
+    fontStyle: "italic",
+    fontSize: 15,
+    marginLeft: 5,
   },
 });
