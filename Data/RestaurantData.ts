@@ -1,95 +1,100 @@
-
 import { images } from "../constants";
 // price rating
 const affordable = 1;
 const fairPrice = 2;
-const expensive = 3
+const expensive = 3;
 export const TopPizza = [
     {
         id: 1,
         name: "Prosciutto",
         rating: 5,
-        size: 'small',
+        size: "small",
         photo: images.TopImgae,
-        people: '1-4',
-        price: '$ 5',
-
+        people: "1-4",
+        price: "$ 5",
+        description:
+            "Today, the dish is one of the most loved street food items both in Rome and in most of Italy. When making pizza al taglio, it is important to let the dough rise and ferment for a longer period of time. The dough is usually baked, topped, and then baked once more, resulting in an evenly-cooked pizza that's light, airy, and easily digestable.",
     },
     {
         id: 2,
         name: "ortolana",
         rating: 5,
-        size: 'small',
+        size: "small",
         photo: images.TopImgae0,
-        people: '1-4',
-        price: '$ 6',
-
+        people: "1-4",
+        price: "$ 6",
+        description:
+            "No longer an immigrant tradition, Chicago-style deep dish pizza is now one of Chicago's cultural and culinary icons. The dish is not just popular in Chicago, but all over the world, and its popularity is evident in the fact that there is even a National Deep Dish Pizza Day, celebrated every year on April 5.",
     },
     {
         id: 3,
         name: "rustica",
         rating: 5,
-        size: 'small',
+        size: "small",
         photo: images.TopImgae1,
-        people: '1-4',
-        price: '$ 3.5',
-
+        people: "1-4",
+        price: "$ 3.5",
+        description:
+            "Since those times, Margherita has become one of the most popular pizza varieties in the world, and in 2009, it was protected as one of the three Pizze Napoletane with an STG European label of protection, proving its excellence in flavor, ingredients, and traditional pizza-making techniques.",
     },
     {
         id: 4,
         name: "Apizza",
         rating: 5,
-        size: 'small',
+        size: "small",
         photo: images.TopImgae2,
-        people: '1-4',
-        price: '$ 7.6',
-
+        people: "1-4",
+        price: "$ 7.6",
+        description:
+            "Almost 200 years later, in 1889, the premier Neapolitan master pizzaiolo Raffaele Esposito added mozzarella to the mix and invented the margherita, which is now generally cited as the first modern pizza. Originally dubbed la pizza tricolore, Esposito’s creation is said to have been made in honor of and named after Margherita of Savoy, the Queen consort of the Kingdom of Italy, who was visiting Naples at the time.",
     },
-
-]
+];
 export const newPizz = [
     {
         id: 1,
         name: "Pizza ortolan",
         rating: 3.6,
-        size: 'small',
+        size: "small",
         photo: images.newPizz,
-        people: '1-4',
-        price: '$ 4.1',
-
+        people: "1-4",
+        price: "$ 4.1",
+        description:
+            "Italy’s most emblematic culinary creation, the genuine pizza Napoletana is made with just a few simple ingredients and prepared in only two variations – marinara, the basic Neapolitan pizza topped with a tomato-based sauce flavored with garlic and oregano, and margherita, which is topped with tomatoes, mozzarella, and fresh basil leaves, a delicious combination whose colors are said to represent the Italian flag.",
     },
     {
         id: 2,
         name: "Pizza rustical",
         rating: 4,
-        size: 'small',
+        size: "small",
         photo: images.newPizz0,
-        people: '1-4',
-        price: '$ 6',
-
+        people: "1-4",
+        price: "$ 6",
+        description:
+            "The crust is very thin at the base, and the dough puffs up on the sides, which results in airy crust that should have typical charred 'leopard spots' if baked properly. The origins of this iconic Neapolitan dish can be traced to the early 1700s, when what we know today as pizza marinara was first described by Italian chef, writer, and philosopher Vincenzo Corrado in his treatise on the eating habits of the people of Naples",
     },
     {
         id: 3,
         name: "Tarte flambée",
         rating: 4.5,
-        size: 'small',
+        size: "small",
         photo: images.newPizz1,
-        people: '1-4',
-        price: '$ 5',
-
+        people: "1-4",
+        price: "$ 5",
+        description:
+            "Almost 200 years later, in 1889, the premier Neapolitan master pizzaiolo Raffaele Esposito added mozzarella to the mix and invented the margherita, which is now generally cited as the first modern pizza. Originally dubbed la pizza tricolore, Esposito’s creation is said to have been made in honor of and named after Margherita of Savoy, the Queen consort of the Kingdom of Italy, who was visiting Naples at the time.",
     },
     {
         id: 4,
         name: "pesto Genovese",
         rating: 4.2,
-        size: 'small',
+        size: "small",
         photo: images.newPizz2,
-        people: '1-4',
-        price: '$ 7.6',
-
+        people: "1-4",
+        price: "$ 7.6",
+        description:
+            "In 2010, as one of Italy’s most popular foods worldwide, pizza Napoletana was officially recognized by the European Union and granted the designation of Traditional Specialty Guaranteed. And remember, a good pizza Napoletana doesn't need any additions other than the designated toppings.",
     },
-
-]
+];
 export const restaurantData = [
     {
         id: 1,
@@ -98,54 +103,42 @@ export const restaurantData = [
         categories: [1],
         Top: true,
         priceRating: affordable,
-        size: 'small',
-        people: '1-4',
-        price: '$ 4',
-
+        size: "small",
+        people: "1-4",
+        price: "$ 4",
+        description:
+            "Pizza Margherita is a delicacy that is literally fit for a queen. In 1889, Queen Margherita of Savoy visited Naples, where she was served a pizza that was made to resemble the colors of the Italian flag: red tomatoes, white mozzarella cheese, and green basil.",
 
         photo: images.neapolitan,
         time: "30 - 45 min",
-        location: {
-            latitude: 1.5347282806345879,
-            longitude: 110.35632207358996,
-        },
-
-
     },
     {
         id: 2,
         name: "Pizza Margherita",
         rating: 3.5,
-        size: 'medium',
-        people: '3-5',
-        price: '$ 6.6',
+        size: "medium",
+        people: "3-5",
+        description:
+            "It was made by a chef named Raffaele Esposito of Pizzeria Brandi, who is credited for its invention. The Queen loved the dish, and Esposito named it after her - pizza Margherita, but such a pizza was also made before that time, and can be dated back to at least 1866, when the most popular pizza toppings included basil, cheese, and tomatoes, but the pizza was not yet named Margherita.",
         categories: [1],
         Top: true,
         priceRating: expensive,
         photo: images.neapolitan1,
         time: "15 - 20 min",
-        location: {
-            latitude: 1.556306570595712,
-            longitude: 110.35504616746915,
-        },
-
-
     },
     {
         id: 3,
         name: "Tomato Pie",
         rating: 3.8,
-        size: 'large',
-        people: '6-7',
-        price: '$ 9.4',
+        size: "large",
+        people: "6-7",
+        price: "$ 9.4",
         categories: [1],
         priceRating: expensive,
         photo: images.neapolitan2,
+        description:
+            "Since those times, Margherita has become one of the most popular pizza varieties in the world, and in 2009, it was protected as one of the three Pizze Napoletane with an STG European label of protection, proving its excellence in flavor, ingredients, and traditional pizza-making techniques.",
         time: "20 - 25 min",
-        location: {
-            latitude: 1.5238753474714375,
-            longitude: 110.34261833833622,
-        },
     },
 
     {
@@ -156,34 +149,25 @@ export const restaurantData = [
         priceRating: expensive,
         photo: images.neapolitan3,
         time: "10 - 15 min",
-        size: 'small',
-        people: '1-4',
-        price: '$ 4',
-        location: {
-            latitude: 1.5578068150528928,
-            longitude: 110.35482523764315,
-        },
-
-
+        size: "small",
+        people: "1-4",
+        price: "$ 4",
+        description:
+            "This unique type of pizza is characterized by its half-round shape, made by folding a full-sized pizza in half. Hailing from 18th century Naples, calzone literally means pant leg, referring to the fact that calzone's original purpose was to be a pizza which can be consumed while walking or standing",
     },
     {
         id: 5,
         name: " Pizza ortolana",
         rating: 4.8,
         categories: [2],
-        size: 'medium',
-        people: '3-5',
-        price: '$ 6.6',
-
+        size: "medium",
+        people: "3-5",
+        price: "$ 6.6",
+        description:
+            "Typically, calzones are filled with meats such as salami or ham and cheeses such as mozzarella, ricotta, parmesan, and pecorino whereas fried calzones with mozzarella and tomatoes are a specialty from the Italian region of Apulia, and are known as panzerotti.",
         priceRating: affordable,
         photo: images.Chicago,
         time: "15 - 20 min",
-        location: {
-            latitude: 1.558050496260768,
-            longitude: 110.34743759630511,
-        },
-
-
     },
     {
         id: 6,
@@ -191,112 +175,88 @@ export const restaurantData = [
         rating: 4.4,
         categories: [2],
         priceRating: affordable,
-        size: 'large',
-        people: '6-7',
+        size: "large",
+        people: "6-7",
         Top: true,
-        price: '$ 9.4',
+        price: "$ 9.4",
         photo: images.Chicago1,
+        description:
+            "Pepperoni pizza is an American pizza variety which includes one of the country's most beloved toppings. Pepperoni is actually a corrupted form of peperoni (one “p”), which denotes a large pepper in Italian, but nowadays it denotes a spicy salami, usually made with a mixture of beef, pork, and spices.",
         time: "5 - 7 min",
-        location: {
-            latitude: 1.5573478487252896,
-            longitude: 110.35568783282145,
-        },
-
-
     },
     {
         id: 7,
         name: "Pizza Apizza",
         rating: 4.9,
         categories: [2],
-        size: 'small',
-        people: '1-4',
-        price: '$ 4',
+        size: "small",
+        people: "1-4",
+        description:
+            "The popularity of pepperoni pizza had only started to rise in the 1950s. Nowadays, beef pepperoni pizza is the most popular pizza variety, but there are also versions such as fish pepperoni pizza and port pepperoni pizza. The preparation varies from one state to another, but the popularity of this pizza has made it a staple across the United States, and it’s usually prepared simply with mozzarella, tomato sauce, and pepperoni",
+        price: "$ 4",
         priceRating: affordable,
         photo: images.Chicago2,
         time: "3 - 4 min",
-        location: {
-            latitude: 1.5573478487252896,
-            longitude: 110.35568783282145,
-        },
-
-
     },
     {
         id: 8,
         name: "Tomato Pie",
         rating: 4.7,
         categories: [2],
-        size: 'large',
-        people: '6-7',
+        size: "large",
+        people: "6-7",
         Top: true,
-        price: '$ 9.4',
+        price: "$ 9.4",
         priceRating: affordable,
         photo: images.Chicago3,
         time: "35 - 40 min",
-        location: {
-            latitude: 1.5573478487252896,
-            longitude: 110.35568783282145,
-        },
-
-
+        description:
+            "Quattro formaggi is a variety of Italian pizza topped with a combination of four kinds of cheese, as the name suggests. Traditionally, the cheeses should be mozzarella and three other, local cheeses, depending on the region, such as Gorgonzola, Fontina, and Parmigiano-Reggiano",
     },
     {
         id: 9,
         name: "Pizza pesto",
         rating: 4.6,
-        size: 'large',
-        people: '6-7',
-        price: '$ 9.4',
+        size: "large",
+        people: "6-7",
+        price: "$ 9.4",
+        description:
+            "Optionally, the pizza can be further enriched with the addition of basil and tomato. The combination of cheeses gives the pizza an unusual, unique flavor that is loved by cheese-aficionados all over the world",
         categories: [3],
-                Top: true,
+        Top: true,
         priceRating: affordable,
         photo: images.Sicilian,
         time: "35 - 40 min",
-        location: {
-            latitude: 1.5573478487252896,
-            longitude: 110.35568783282145,
-        },
-
-
     },
     {
         id: 10,
         name: "Pizza efichi",
         rating: 4.6,
-        size: 'medium',
-        people: '3-5',
-        price: '$ 6.6',
+        size: "medium",
+        people: "3-5",
+        price: "$ 6.6",
 
         categories: [3],
         Top: true,
         priceRating: affordable,
         photo: images.Sicilian1,
         time: "35 - 40 min",
-        location: {
-            latitude: 1.5573478487252896,
-            longitude: 110.35568783282145,
-        },
-
-
+        description:
+            "This is a variety of Italian pizza that is traditionally topped with cherry tomatoes, mozzarella di bufala, olive oil, and fresh basil leaves. It provides a great way to use up leftover tomatoes, and some cooks like to finish it off with a drizzle of balsamic reduction on top.",
     },
     {
         id: 11,
         name: "Pizza pesto",
         rating: 3.9,
         categories: [3],
-        size: 'small',
-        people: '1-4',
-        price: '$ 4',
+        size: "small",
+        people: "1-4",
+        price: "$ 4",
         priceRating: affordable,
         photo: images.Sicilian2,
         time: "35 - 40 min",
-        location: {
-            latitude: 1.5573478487252896,
-            longitude: 110.35568783282145,
-        },
-
-
+        description:
+            "In the late 1800s and the early 1900s, Neapolitan immigrants came to the USA in search of a better life. Shortly after, in 1943, their descendants, Ike Sewell and Ric Riccardo had opened Pizzeria Uno in Chicago, serving a new variety of pizza in a deeper dish, with inverted layers of cheese, meat, and tomatoes, and a crunchy crust.",
     },
     {
         id: 12,
@@ -307,15 +267,11 @@ export const restaurantData = [
         Top: true,
         photo: images.Sicilian3,
         time: "35 - 40 min",
-        size: 'medium',
-        people: '3-5',
-        price: '$ 6.6',
-        location: {
-            latitude: 1.5573478487252896,
-            longitude: 110.35568783282145,
-        },
-
-
+        size: "medium",
+        people: "3-5",
+        price: "$ 6.6",
+        description:
+            "No longer an immigrant tradition, Chicago-style deep dish pizza is now one of Chicago's cultural and culinary icons. The dish is not just popular in Chicago, but all over the world, and its popularity is evident in the fact that there is even a National Deep Dish Pizza Day, celebrated every year on April 5.",
     },
     {
         id: 13,
@@ -324,16 +280,12 @@ export const restaurantData = [
         categories: [4],
         priceRating: affordable,
         photo: images.Greek,
-        size: 'large',
-        people: '6-7',
-        price: '$ 9.4',
+        size: "large",
+        people: "6-7",
+        price: "$ 9.4",
         time: "10 - 20 min",
-        location: {
-            latitude: 1.5573478487252896,
-            longitude: 110.35568783282145,
-        },
-
-
+        description:
+            "Despite its name, Hawaiian pizza is a Canadian invention, a classic American-style pie topped with cheese, ham, and pineapple chunks. It was originally created by Sam Panopoulos in Ontario in the mid-1960s, when he added pineapple to the dish and started serving it to the customers of his Satellite Restaurant.",
     },
     {
         id: 14,
@@ -343,181 +295,82 @@ export const restaurantData = [
         priceRating: affordable,
         photo: images.Greek1,
         time: "3 - 4 min",
-        size: 'medium',
-        people: '3-5',
-        price: '$ 6.6',
-        location: {
-            latitude: 1.5573478487252896,
-            longitude: 110.35568783282145,
-        },
-
-
+        size: "medium",
+        people: "3-5",
+        price: "$ 6.6",
+        description:
+            "Although sfincione doesn't contain mozzarella, Italian bakeries in NYC had access to inexpensive mozzarella so it was only logical that they began to top their sfincione with it. Nowadays, Sicilian-style pizza is popular in numerous Italian-American communities in New York, New Jersey, Michigan, Connecticut, Rhode Island, and Massachusetts.",
     },
     {
         id: 15,
         name: "Pugliese Pizza",
         rating: 4.6,
         categories: [4],
-        size: 'small',
-        people: '1-4',
-        price: '$ 4',
+        size: "small",
+        people: "1-4",
+        price: "$ 4",
         priceRating: affordable,
         photo: images.Greek2,
         time: "3 - 4 min",
-        location: {
-            latitude: 1.5573478487252896,
-            longitude: 110.35568783282145,
-        },
-
-
+        description:
+            "In the United States, Sicilian pizza denotes a thick, square-shaped dough topped with mozzarella cheese and tomato sauce. The sauce is often placed on top of the cheese in order for the crust to be well-cooked. This pizza was brought to the United States (primarily New York) by Sicilian immigrants, and it was derived from sfincione.",
     },
     {
         id: 16,
         name: "Pizza Fugazzeta",
         rating: 4.2,
-        size: 'medium',
-        people: '3-5',
-        price: '$ 6.6',
+        size: "medium",
+        people: "3-5",
+        price: "$ 6.6",
+        description:
+            "Pizza al taglio is a variety of Italian pizza that is baked in rectangular trays and sold sliced into squares or rectangles. Prices can be marked either per slice of pizza or per kilogram. The first pizza al taglio was baked in Rome in the late 1950s, when it was topped with olive oil and tomato sauce.",
 
         categories: [4],
         priceRating: affordable,
         photo: images.Greek3,
         time: "3 - 4 min",
-        location: {
-            latitude: 1.5573478487252896,
-            longitude: 110.35568783282145,
-        },
-
-        // menu: [
-        //     {
-        //         menuId: 12,
-        //         name: "Teh C Peng",
-        //         photo: images.teh_c_peng,
-        //         description: "Three Layer Teh C Peng",
-        //         calories: 100,
-        //         price: 2,
-        //     },
-        //     {
-        //         menuId: 13,
-        //         name: "ABC Ice Kacang",
-        //         photo: images.ice_kacang,
-        //         description: "Shaved Ice with red beans",
-        //         calories: 100,
-        //         price: 3,
-        //     },
-        //     {
-        //         menuId: 14,
-        //         name: "Kek Lapis",
-        //         photo: images.kek_lapis,
-        //         description: "Layer cakes",
-        //         calories: 300,
-        //         price: 20,
-        //     },
-        // ],
     },
     {
         id: 17,
         name: "Pizza California",
         rating: 3.2,
-        size: 'small',
-        people: '1-4',
-        price: '$ 4',
+        size: "small",
+        people: "1-4",
+        price: "$ 4",
         categories: [5],
         priceRating: affordable,
         photo: images.California,
 
-        location: {
-            latitude: 1.5573478487252896,
-            longitude: 110.35568783282145,
-        },
-
-        // menu: [
-        //     {
-        //         menuId: 12,
-        //         name: "Teh C Peng",
-        //         photo: images.teh_c_peng,
-        //         description: "Three Layer Teh C Peng",
-        //         calories: 100,
-        //         price: 2,
-        //     },
-        //     {
-        //         menuId: 13,
-        //         name: "ABC Ice Kacang",
-        //         photo: images.ice_kacang,
-        //         description: "Shaved Ice with red beans",
-        //         calories: 100,
-        //         price: 3,
-        //     },
-        //     {
-        //         menuId: 14,
-        //         name: "Kek Lapis",
-        //         photo: images.kek_lapis,
-        //         description: "Layer cakes",
-        //         calories: 300,
-        //         price: 20,
-        //     },
-        // ],
+        description:
+            "Pizza bianca or white pizza is a variety of pizza which omits tomato sauce from the equation, often substituting it with pesto or sour cream. In Rome, pizza bianca is prepared with no sauce whatsoever, and it is instead topped with salt and olive oil, while chopped rosemary is sometimes sprinkled on top.",
     },
     {
         id: 116,
         name: "Pizza Fugazzeta",
         rating: 4.2,
         categories: [4],
-        size: 'large',
-        people: '6-7',
-        price: '$ 9.4',
+        size: "large",
+        people: "6-7",
+        price: "$ 9.4",
         priceRating: affordable,
         photo: images.Greek3,
         time: "3 - 4 min",
-        location: {
-            latitude: 1.5573478487252896,
-            longitude: 110.35568783282145,
-        },
-
-
+        description:
+            "Today, the dish is one of the most loved street food items both in Rome and in most of Italy. When making pizza al taglio, it is important to let the dough rise and ferment for a longer period of time. The dough is usually baked, topped, and then baked once more, resulting in an evenly-cooked pizza that's light, airy, and easily digestable.",
     },
     {
         id: 18,
         name: "Garlic Fingers",
         rating: 4.8,
         categories: [5],
-        size: 'medium',
-        people: '3-5',
-        price: '$ 6.6',
+        size: "medium",
+        people: "3-5",
+        price: "$ 6.6",
+        description:
+            "This Italian pizza variety is prepared with a base of classic pizza dough that is topped with mozzarella and then shortly baked. The fresh ingredients added on top typically include cherry tomatoes, arugula, prosciutto, and parmesan cheese shavings.",
         priceRating: affordable,
         photo: images.California1,
         time: "3 - 4 min",
-        location: {
-            latitude: 1.5573478487252896,
-            longitude: 110.35568783282145,
-        },
-
-        // menu: [
-        //     {
-        //         menuId: 12,
-        //         name: "Teh C Peng",
-        //         photo: images.teh_c_peng,
-        //         description: "Three Layer Teh C Peng",
-        //         calories: 100,
-        //         price: 2,
-        //     },
-        //     {
-        //         menuId: 13,
-        //         name: "ABC Ice Kacang",
-        //         photo: images.ice_kacang,
-        //         description: "Shaved Ice with red beans",
-        //         calories: 100,
-        //         price: 3,
-        //     },
-        //     {
-        //         menuId: 14,
-        //         name: "Kek Lapis",
-        //         photo: images.kek_lapis,
-        //         description: "Layer cakes",
-        //         calories: 300,
-        //         price: 20,
-        //     },
-        // ],
     },
     {
         id: 19,
@@ -525,43 +378,14 @@ export const restaurantData = [
         rating: 4.8,
         categories: [5],
         Top: true,
-        size: 'small',
-        people: '1-4',
-        price: '$ 4',
+        size: "small",
+        description:
+            "Tarte flambée is a thin, crispy, rectangular flatbread that is topped with tart and spreadable cheese (fromage blanc) or melting ripe cheese (Munster), créme fraîche, crispy bacon, and thinly sliced roasted onions.",
+        people: "1-4",
+        price: "$ 4",
         priceRating: affordable,
         photo: images.California2,
         time: "3 - 4 min",
-        location: {
-            latitude: 1.5573478487252896,
-            longitude: 110.35568783282145,
-        },
-
-        // menu: [
-        //     {
-        //         menuId: 12,
-        //         name: "Teh C Peng",
-        //         photo: images.teh_c_peng,
-        //         description: "Three Layer Teh C Peng",
-        //         calories: 100,
-        //         price: 2,
-        //     },
-        //     {
-        //         menuId: 13,
-        //         name: "ABC Ice Kacang",
-        //         photo: images.ice_kacang,
-        //         description: "Shaved Ice with red beans",
-        //         calories: 100,
-        //         price: 3,
-        //     },
-        //     {
-        //         menuId: 14,
-        //         name: "Kek Lapis",
-        //         photo: images.kek_lapis,
-        //         description: "Layer cakes",
-        //         calories: 300,
-        //         price: 20,
-        //     },
-        // ],
     },
     {
         id: 20,
@@ -571,40 +395,11 @@ export const restaurantData = [
         priceRating: affordable,
         photo: images.Detroit,
         time: "2 - 4 min",
-        size: 'medium',
-        people: '3-5',
-        price: '$ 6.6',
-        location: {
-            latitude: 1.5573478487252896,
-            longitude: 110.35568783282145,
-        },
-
-        // menu: [
-        //     {
-        //         menuId: 12,
-        //         name: "Teh C Peng",
-        //         photo: images.teh_c_peng,
-        //         description: "Three Layer Teh C Peng",
-        //         calories: 100,
-        //         price: 2,
-        //     },
-        //     {
-        //         menuId: 13,
-        //         name: "ABC Ice Kacang",
-        //         photo: images.ice_kacang,
-        //         description: "Shaved Ice with red beans",
-        //         calories: 100,
-        //         price: 3,
-        //     },
-        //     {
-        //         menuId: 14,
-        //         name: "Kek Lapis",
-        //         photo: images.kek_lapis,
-        //         description: "Layer cakes",
-        //         calories: 300,
-        //         price: 20,
-        //     },
-        // ],
+        size: "medium",
+        people: "3-5",
+        price: "$ 6.6",
+        description:
+            "As the name suggests, this Italian pizza variety is created to appeal to the vegetarian palate. Pizza vegetariana consists of a basic pizza dough that is smeared with tomato sauce and topped with mozzarella and a combination of fresh, seasonal vegetables, typically zucchini, eggplants, and peppers, which are almost always pre-cooked",
     },
     {
         id: 21,
@@ -614,40 +409,11 @@ export const restaurantData = [
         priceRating: affordable,
         photo: images.Detroit,
         time: "2 - 4 min",
-        size: 'large',
-        people: '6-7',
-        price: '$ 9.4',
-        location: {
-            latitude: 1.5573478487252896,
-            longitude: 110.35568783282145,
-        },
-
-        // menu: [
-        //     {
-        //         menuId: 12,
-        //         name: "Teh C Peng",
-        //         photo: images.teh_c_peng,
-        //         description: "Three Layer Teh C Peng",
-        //         calories: 100,
-        //         price: 2,
-        //     },
-        //     {
-        //         menuId: 13,
-        //         name: "ABC Ice Kacang",
-        //         photo: images.ice_kacang,
-        //         description: "Shaved Ice with red beans",
-        //         calories: 100,
-        //         price: 3,
-        //     },
-        //     {
-        //         menuId: 14,
-        //         name: "Kek Lapis",
-        //         photo: images.kek_lapis,
-        //         description: "Layer cakes",
-        //         calories: 300,
-        //         price: 20,
-        //     },
-        // ],
+        size: "large",
+        people: "6-7",
+        price: "$ 9.4",
+        description:
+            "Of course, due to its popularity, it spread well beyond Alsace, so there are many varieties of the dish with added mushrooms or tomatoes. Tarte flambée pairs perfectly with dry white wines and foamy local beers, both of them specialties of the Alsace region.",
     },
     {
         id: 22,
@@ -657,86 +423,26 @@ export const restaurantData = [
         priceRating: affordable,
         photo: images.Detroit2,
         time: "2 - 4 min",
-        size: 'medium',
-        people: '3-5',
-        price: '$ 6.6',
-        location: {
-            latitude: 1.5573478487252896,
-            longitude: 110.35568783282145,
-        },
-
-        // menu: [
-        //     {
-        //         menuId: 12,
-        //         name: "Teh C Peng",
-        //         photo: images.teh_c_peng,
-        //         description: "Three Layer Teh C Peng",
-        //         calories: 100,
-        //         price: 2,
-        //     },
-        //     {
-        //         menuId: 13,
-        //         name: "ABC Ice Kacang",
-        //         photo: images.ice_kacang,
-        //         description: "Shaved Ice with red beans",
-        //         calories: 100,
-        //         price: 3,
-        //     },
-        //     {
-        //         menuId: 14,
-        //         name: "Kek Lapis",
-        //         photo: images.kek_lapis,
-        //         description: "Layer cakes",
-        //         calories: 300,
-        //         price: 20,
-        //     },
-        // ],
+        size: "medium",
+        people: "3-5",
+        price: "$ 6.6",
+        description:
+            "A pinch of salt, ground pepper, peanut oil and nutmeg add extra layers of flavor to this beloved snack. Also known as flammeküche in Germany, the flaming tart takes its name from the fact that it is baked at a close proximity to hot embers in a brick oven.",
     },
     {
         id: 23,
         name: "Pizza e fichi",
         rating: 4.0,
-        size: 'small',
-        people: '1-4',
-        price: '$ 4',
+        size: "small",
+        people: "1-4",
+        price: "$ 4",
         categories: [6],
         priceRating: affordable,
         photo: images.Detroit3,
         time: "2 - 4 min",
-
-        location: {
-            latitude: 1.5573478487252896,
-            longitude: 110.35568783282145,
-        },
-
-        // menu: [
-        //     {
-        //         menuId: 12,
-        //         name: "Teh C Peng",
-        //         photo: images.teh_c_peng,
-        //         description: "Three Layer Teh C Peng",
-        //         calories: 100,
-        //         price: 2,
-        //     },
-        //     {
-        //         menuId: 13,
-        //         name: "ABC Ice Kacang",
-        //         photo: images.ice_kacang,
-        //         description: "Shaved Ice with red beans",
-        //         calories: 100,
-        //         price: 3,
-        //     },
-        //     {
-        //         menuId: 14,
-        //         name: "Kek Lapis",
-        //         photo: images.kek_lapis,
-        //         description: "Layer cakes",
-        //         calories: 300,
-        //         price: 20,
-        //     },
-        // ],
+        description:
+            "Manakish is a favorite Lebanese breakfast - a round, flat bread that is typically topped with olive oil and zaatar (sesame seeds, thyme, and sumac), then baked in the oven. Other toppings might include cheese, minced lamb, spinach, or fried eggplants.",
     },
-
 ];
 
 export const categoryData = [

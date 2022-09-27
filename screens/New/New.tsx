@@ -16,12 +16,11 @@ import * as Animatable from "react-native-animatable";
 import {BlurView} from "expo-blur";
 import React from "react";
 
-import {RootTabScreenProps} from "../types";
+import {RootTabScreenProps} from "../../types";
 import {FontAwesome} from "@expo/vector-icons";
-import ModalScreen from "./ModalScreen";
 
-import {images} from "../constants";
-import {newPizz} from "../Data/RestaurantData";
+import {images} from "../../constants";
+import {newPizz} from "../../Data/RestaurantData";
 import {isLoading} from "expo-font";
 
 import {
@@ -29,13 +28,9 @@ import {
   responsiveWidth,
   responsiveFontSize,
 } from "react-native-responsive-dimensions";
+import RenderNew from "./RenderNew";
 
-import {renderCard} from "../components/Card";
-import { renderNew } from "../components/Card2";
-
-
-
-const New = ({navigation}:any) => {
+const New = ({navigation}: any) => {
   return (
     <>
       <View
@@ -108,7 +103,7 @@ const New = ({navigation}:any) => {
       </View>
       <FlatList
         data={newPizz}
-        renderItem={renderNew}
+        renderItem={({item}) => <RenderNew item={item} />}
         keyExtractor={item => `${item.id}`}
         horizontal
         showsHorizontalScrollIndicator={false}

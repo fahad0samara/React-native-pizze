@@ -13,26 +13,24 @@ import {
   View,
 } from "react-native";
 import * as Animatable from "react-native-animatable";
-import {BlurView} from "expo-blur";
+
 import React from "react";
 
 import {RootTabScreenProps} from "../types";
 import {FontAwesome} from "@expo/vector-icons";
-import ModalScreen from "./ModalScreen";
 
-import {images} from "../constants";
 import {restaurantData, TopPizza, categoryData} from "../Data/RestaurantData";
-import {isLoading} from "expo-font";
 
 import {
   responsiveHeight,
   responsiveWidth,
   responsiveFontSize,
 } from "react-native-responsive-dimensions";
-import {renderTop} from "../components/PopularPizaa";
-import {renderCard} from "../components/Card";
-import New from "./New";
-import { renderNew } from "../components/Card2";
+
+import New from "./New/New";
+
+import RenderFirstCard from "../components/RenderFirstCard";
+import RenderTop from "../components/RenderTop";
 
 export default function TabOneScreen({
   navigation,
@@ -49,18 +47,50 @@ export default function TabOneScreen({
     }
   }, []);
 
-  // Dummy Datas
+  const [search, setSearch] = React.useState(""); //search
+  const [searchData, setSearchData] = React.useState(restaurantData); //search data
+  const [loading, setLoading] = React.useState(false);
+   //loading
+
+
+// search function
+  const searchFilterFunction = (text: string) => {
+    if (text) {
+  
+      const newData = restaurantData.filter((item) => {
+        const itemData = item.name 
+          ? item.name.toUpperCase()
+          : "".toUpperCase();
+        
+        const textData = text.toUpperCase();
+        return itemData.indexOf(textData) > -1;
+      });
+      setSearchData(newData);
+      setSearch(text);
+
+      setLoading(false);
+
+    } else {
+      setSearchData(restaurantData);
+
+      setSearch(text);
+    }
+  };
+  
+
+
+   
 
   // price rating
 
-  const [categories, setCategories] = React.useState(categoryData);
-  const [selectedCategory, setSelectedCategory] = React.useState();
-  const [restaurants, setRestaurants] = React.useState(restaurantData);
-  const [topPizza, setTopPizza] = React.useState(TopPizza);
+  const [categories, setCategories] = React.useState(categoryData); //category data
+  const [selectedCategory, setSelectedCategory] = React.useState(); //selected category
+  const [restaurants, setRestaurants] = React.useState(restaurantData); //restaurant data
+  const [topPizza, setTopPizza] = React.useState(TopPizza); //top pizza data
 
-  function onSelectCategory(category: any) {
+  function onSelectCategory(category: any)  {
     //filter restaurant
-    let restaurantList = restaurantData.filter(a =>
+    let restaurantList = restaurantData.filter(a => 
       a.categories.includes(category.id)
     );
 
@@ -165,7 +195,15 @@ export default function TabOneScreen({
             }}
           />
           <TextInput
+         
+            onChangeText={(text) => searchFilterFunction(text)}
+          
+            value={search}
+
+
+                
             placeholder="Search for a pizza..."
+
             placeholderTextColor={"#000"}
             style={{
               borderRadius: 10,
@@ -202,8 +240,7 @@ export default function TabOneScreen({
           horizontal
           showsHorizontalScrollIndicator={false}
           keyExtractor={item => `${item.id}`}
-          renderItem={renderNew}
-          contentContainerStyle={{}}
+          renderItem={({item}) => <RenderFirstCard item={item} />}
         />
         <View
           style={{
@@ -279,9 +316,11 @@ export default function TabOneScreen({
           horizontal
           showsHorizontalScrollIndicator={false}
           keyExtractor={item => `${item.id}`}
-          renderItem={renderTop}
-          contentContainerStyle={{}}
+          renderItem={({item}) => <RenderTop item={item} />}
         />
+        {
+          // render the New card
+        }
         <New />
       </ScrollView>
     </SafeAreaView>
