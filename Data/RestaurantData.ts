@@ -8,10 +8,37 @@ export const TopPizza = [
         id: 1,
         name: "Prosciutto",
         rating: 5,
+        time: "3 - 5 min",
         size: "small",
         photo: images.TopImgae,
         people: "1-4",
         price: "$ 5",
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour,
+            }, {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            },
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            },
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            },
+        ],
         description:
             "Today, the dish is one of the most loved street food items both in Rome and in most of Italy. When making pizza al taglio, it is important to let the dough rise and ferment for a longer period of time. The dough is usually baked, topped, and then baked once more, resulting in an evenly-cooked pizza that's light, airy, and easily digestable.",
     },
@@ -22,7 +49,46 @@ export const TopPizza = [
         size: "small",
         photo: images.TopImgae0,
         people: "1-4",
+        time: "2 - 5 min",
         price: "$ 6",
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "00 flour",
+                icon: images.flour0,
+            },
+            {
+                id: 2,
+                nameicon: "tomato",
+                icon: images.tomato,
+            },
+            {
+                id: 3,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            },
+
+            {
+                id: 4,
+                nameicon: "peppers",
+                icon: images.peppers,
+            }, {
+                id: 5,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+            {
+                id: 6,
+                nameicon: "sauce",
+                icon: images.sauce,
+            },
+            {
+                id: 7,
+                nameicon: "olive",
+                icon: images.olive,
+            },
+          
+        ],
         description:
             "No longer an immigrant tradition, Chicago-style deep dish pizza is now one of Chicago's cultural and culinary icons. The dish is not just popular in Chicago, but all over the world, and its popularity is evident in the fact that there is even a National Deep Dish Pizza Day, celebrated every year on April 5.",
     },
@@ -30,10 +96,43 @@ export const TopPizza = [
         id: 3,
         name: "rustica",
         rating: 5,
+        time: "3 - 5 min",
         size: "small",
         photo: images.TopImgae1,
         people: "1-4",
         price: "$ 3.5",
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour,
+            },
+            {
+                id: 2,
+                nameicon: "tomato",
+                icon: images.tomato,
+            },
+
+            {
+                id: 3,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            }, {
+                id: 4,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+            {
+                id: 5,
+                nameicon: "peppers",
+                icon: images.peppers,
+            },
+            {
+                id: 6,
+                nameicon: "sauce",
+                icon: images.sauce,
+            },
+        ],
         description:
             "Since those times, Margherita has become one of the most popular pizza varieties in the world, and in 2009, it was protected as one of the three Pizze Napoletane with an STG European label of protection, proving its excellence in flavor, ingredients, and traditional pizza-making techniques.",
     },
@@ -42,9 +141,42 @@ export const TopPizza = [
         name: "Apizza",
         rating: 5,
         size: "small",
+        time: "3 - 5 min",
         photo: images.TopImgae2,
         people: "1-4",
         price: "$ 7.6",
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour,
+            },
+            {
+                id: 6,
+                nameicon: "olive",
+                icon: images.olive,
+            },
+            {
+                id: 5,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            },
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            },
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            },
+        ],
         description:
             "Almost 200 years later, in 1889, the premier Neapolitan master pizzaiolo Raffaele Esposito added mozzarella to the mix and invented the margherita, which is now generally cited as the first modern pizza. Originally dubbed la pizza tricolore, Esposito’s creation is said to have been made in honor of and named after Margherita of Savoy, the Queen consort of the Kingdom of Italy, who was visiting Naples at the time.",
     },
@@ -55,9 +187,45 @@ export const newPizz = [
         name: "Pizza ortolan",
         rating: 3.6,
         size: "small",
+        time: "3 - 5 min",
         photo: images.newPizz,
         people: "1-4",
         price: "$ 4.1",
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            },
+            {
+                id: 8,
+                nameicon: "olive",
+                icon: images.olive,
+            },
+          
+            {
+                id: 3,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+            {
+                id: 4,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            },
+            {
+                id: 5,
+                nameicon: "peppers",
+                icon: images.peppers,
+            },
+
+         
+            {
+                id: 6,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+        ],
         description:
             "Italy’s most emblematic culinary creation, the genuine pizza Napoletana is made with just a few simple ingredients and prepared in only two variations – marinara, the basic Neapolitan pizza topped with a tomato-based sauce flavored with garlic and oregano, and margherita, which is topped with tomatoes, mozzarella, and fresh basil leaves, a delicious combination whose colors are said to represent the Italian flag.",
     },
@@ -69,6 +237,39 @@ export const newPizz = [
         photo: images.newPizz0,
         people: "1-4",
         price: "$ 6",
+        time: "3 - 5 min",
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            },
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            },
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            }, {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            },
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+        ],
         description:
             "The crust is very thin at the base, and the dough puffs up on the sides, which results in airy crust that should have typical charred 'leopard spots' if baked properly. The origins of this iconic Neapolitan dish can be traced to the early 1700s, when what we know today as pizza marinara was first described by Italian chef, writer, and philosopher Vincenzo Corrado in his treatise on the eating habits of the people of Naples",
     },
@@ -77,9 +278,48 @@ export const newPizz = [
         name: "Tarte flambée",
         rating: 4.5,
         size: "small",
+        time: "2.5 - 5 min",
         photo: images.newPizz1,
         people: "1-4",
         price: "$ 5",
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            },
+            {
+                id: 8,
+                nameicon: "olive",
+                icon: images.olive,
+            },
+
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            },
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            }, {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            },
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+        ],
         description:
             "Almost 200 years later, in 1889, the premier Neapolitan master pizzaiolo Raffaele Esposito added mozzarella to the mix and invented the margherita, which is now generally cited as the first modern pizza. Originally dubbed la pizza tricolore, Esposito’s creation is said to have been made in honor of and named after Margherita of Savoy, the Queen consort of the Kingdom of Italy, who was visiting Naples at the time.",
     },
@@ -90,6 +330,50 @@ export const newPizz = [
         size: "small",
         photo: images.newPizz2,
         people: "1-4",
+        time: "4 - 5 min",
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            },
+            {
+                id: 8,
+                nameicon: "olive",
+                icon: images.olive,
+            },   {
+                id: 8,
+                nameicon: "olive",
+                icon: images.olive,
+            },
+          
+
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            },
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            }, {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            },
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+        ],
         price: "$ 7.6",
         description:
             "In 2010, as one of Italy’s most popular foods worldwide, pizza Napoletana was officially recognized by the European Union and granted the designation of Traditional Specialty Guaranteed. And remember, a good pizza Napoletana doesn't need any additions other than the designated toppings.",
@@ -106,6 +390,43 @@ export const restaurantData = [
         size: "small",
         people: "1-4",
         price: "$ 4",
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            },
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            },
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            },
+
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            }, {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            }, {
+                id: 8,
+                nameicon: "olive",
+                icon: images.olive,
+            },
+
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+        ],
         description:
             "Pizza Margherita is a delicacy that is literally fit for a queen. In 1889, Queen Margherita of Savoy visited Naples, where she was served a pizza that was made to resemble the colors of the Italian flag: red tomatoes, white mozzarella cheese, and green basil.",
 
@@ -118,6 +439,43 @@ export const restaurantData = [
         rating: 3.5,
         size: "medium",
         people: "3-5",
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            },
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            },
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            }, {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            }, {
+                id: 8,
+                nameicon: "olive",
+                icon: images.olive,
+            },
+
+
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            },
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+        ],
         description:
             "It was made by a chef named Raffaele Esposito of Pizzeria Brandi, who is credited for its invention. The Queen loved the dish, and Esposito named it after her - pizza Margherita, but such a pizza was also made before that time, and can be dated back to at least 1866, when the most popular pizza toppings included basil, cheese, and tomatoes, but the pizza was not yet named Margherita.",
         categories: [1],
@@ -134,6 +492,38 @@ export const restaurantData = [
         people: "6-7",
         price: "$ 9.4",
         categories: [1],
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            },
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            },
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            }, {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            },
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+        ],
         priceRating: expensive,
         photo: images.neapolitan2,
         description:
@@ -150,6 +540,43 @@ export const restaurantData = [
         photo: images.neapolitan3,
         time: "10 - 15 min",
         size: "small",
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            },
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            },
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            },
+
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            }, {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            }, {
+                id: 8,
+                nameicon: "olive",
+                icon: images.olive,
+            },
+
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+        ],
         people: "1-4",
         price: "$ 4",
         description:
@@ -161,6 +588,43 @@ export const restaurantData = [
         rating: 4.8,
         categories: [2],
         size: "medium",
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            },
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            }, {
+                id: 8,
+                nameicon: "olive",
+                icon: images.olive,
+            },
+
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            }, {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            },
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+        ],
         people: "3-5",
         price: "$ 6.6",
         description:
@@ -178,6 +642,47 @@ export const restaurantData = [
         size: "large",
         people: "6-7",
         Top: true,
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            }, {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            }, {
+                id: 8,
+                nameicon: "olive",
+                icon: images.olive,
+            },
+
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            },
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            },
+
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            }, {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+        ],
         price: "$ 9.4",
         photo: images.Chicago1,
         description:
@@ -190,8 +695,46 @@ export const restaurantData = [
         rating: 4.9,
         categories: [2],
         size: "small",
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            },
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            },
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            }, {
+                id: 8,
+                nameicon: "olive",
+                icon: images.olive,
+            },
+
+
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            }, {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+        ],
         people: "1-4",
         description:
+
             "The popularity of pepperoni pizza had only started to rise in the 1950s. Nowadays, beef pepperoni pizza is the most popular pizza variety, but there are also versions such as fish pepperoni pizza and port pepperoni pizza. The preparation varies from one state to another, but the popularity of this pizza has made it a staple across the United States, and it’s usually prepared simply with mozzarella, tomato sauce, and pepperoni",
         price: "$ 4",
         priceRating: affordable,
@@ -206,6 +749,43 @@ export const restaurantData = [
         size: "large",
         people: "6-7",
         Top: true,
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            },
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            }, {
+                id: 8,
+                nameicon: "olive",
+                icon: images.olive,
+            },
+
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            },
+            {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            },
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+        ],
         price: "$ 9.4",
         priceRating: affordable,
         photo: images.Chicago3,
@@ -220,6 +800,43 @@ export const restaurantData = [
         size: "large",
         people: "6-7",
         price: "$ 9.4",
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            }, {
+                id: 8,
+                nameicon: "olive",
+                icon: images.olive,
+            },
+
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            }, {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            },
+
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            },
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+        ],
         description:
             "Optionally, the pizza can be further enriched with the addition of basil and tomato. The combination of cheeses gives the pizza an unusual, unique flavor that is loved by cheese-aficionados all over the world",
         categories: [3],
@@ -234,6 +851,43 @@ export const restaurantData = [
         rating: 4.6,
         size: "medium",
         people: "3-5",
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            }, {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            },
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            },
+            {
+                id: 8,
+                nameicon: "olive",
+                icon: images.olive,
+            },
+
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            },
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+        ],
         price: "$ 6.6",
 
         categories: [3],
@@ -252,6 +906,52 @@ export const restaurantData = [
         size: "small",
         people: "1-4",
         price: "$ 4",
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            }, {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            }, {
+                id: 8,
+                nameicon: "olive",
+                icon: images.olive,
+            }, {
+                id: 8,
+                nameicon: "olive",
+                icon: images.olive,
+            },
+
+
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            }, {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            },
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+        ],
         priceRating: affordable,
         photo: images.Sicilian2,
         time: "35 - 40 min",
@@ -263,6 +963,47 @@ export const restaurantData = [
         name: "Pizza pesto",
         rating: 3.6,
         categories: [3],
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            }, {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            }, {
+                id: 8,
+                nameicon: "olive",
+                icon: images.olive,
+            },
+
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            },
+
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            }, {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+        ],
         priceRating: affordable,
         Top: true,
         photo: images.Sicilian3,
@@ -281,6 +1022,47 @@ export const restaurantData = [
         priceRating: affordable,
         photo: images.Greek,
         size: "large",
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            }, {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            },
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            }, {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            }, {
+                id: 8,
+                nameicon: "olive",
+                icon: images.olive,
+            },
+
+
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            },
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+        ],
         people: "6-7",
         price: "$ 9.4",
         time: "10 - 20 min",
@@ -292,6 +1074,42 @@ export const restaurantData = [
         name: "Pizza pesto",
         rating: 4.6,
         categories: [4],
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            },
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            }, {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            },
+
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            },
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            }, {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+        ],
         priceRating: affordable,
         photo: images.Greek1,
         time: "3 - 4 min",
@@ -305,6 +1123,47 @@ export const restaurantData = [
         id: 15,
         name: "Pugliese Pizza",
         rating: 4.6,
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            }, {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            }, {
+                id: 8,
+                nameicon: "olive",
+                icon: images.olive,
+            },
+
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            }, {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            },
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+        ],
         categories: [4],
         size: "small",
         people: "1-4",
@@ -319,6 +1178,38 @@ export const restaurantData = [
         id: 16,
         name: "Pizza Fugazzeta",
         rating: 4.2,
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            },
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            },
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            },
+
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            }, {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+        ],
         size: "medium",
         people: "3-5",
         price: "$ 6.6",
@@ -337,6 +1228,43 @@ export const restaurantData = [
         size: "small",
         people: "1-4",
         price: "$ 4",
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            },
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            }, {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            },
+            {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            },
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+        ],
         categories: [5],
         priceRating: affordable,
         photo: images.California,
@@ -355,6 +1283,49 @@ export const restaurantData = [
         priceRating: affordable,
         photo: images.Greek3,
         time: "3 - 4 min",
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            },
+            {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            },
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            },
+            {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            }, {
+                id: 8,
+                nameicon: "olive",
+                icon: images.olive,
+            },
+
+
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            },
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+        ],
         description:
             "Today, the dish is one of the most loved street food items both in Rome and in most of Italy. When making pizza al taglio, it is important to let the dough rise and ferment for a longer period of time. The dough is usually baked, topped, and then baked once more, resulting in an evenly-cooked pizza that's light, airy, and easily digestable.",
     },
@@ -364,6 +1335,39 @@ export const restaurantData = [
         rating: 4.8,
         categories: [5],
         size: "medium",
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            },
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            },
+            {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            },
+
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            },
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+        ],
         people: "3-5",
         price: "$ 6.6",
         description:
@@ -378,6 +1382,44 @@ export const restaurantData = [
         rating: 4.8,
         categories: [5],
         Top: true,
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            },
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            },
+            {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            },
+            {
+                id: 8,
+                nameicon: "olive",
+                icon: images.olive,
+            },
+
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            },
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+        ],
         size: "small",
         description:
             "Tarte flambée is a thin, crispy, rectangular flatbread that is topped with tart and spreadable cheese (fromage blanc) or melting ripe cheese (Munster), créme fraîche, crispy bacon, and thinly sliced roasted onions.",
@@ -392,6 +1434,39 @@ export const restaurantData = [
         name: "Pizza  padellino",
         rating: 4.8,
         categories: [6],
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            },
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            },
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            },
+
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            },
+            {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+        ],
         priceRating: affordable,
         photo: images.Detroit,
         time: "2 - 4 min",
@@ -403,10 +1478,49 @@ export const restaurantData = [
     },
     {
         id: 21,
+
         name: "Pizza pesto",
         rating: 5.0,
         categories: [6],
         priceRating: affordable,
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            },
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            }, {
+                id: 8,
+                nameicon: "olive",
+                icon: images.olive,
+            },
+
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            },
+
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            },
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+            {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+        ],
         photo: images.Detroit,
         time: "2 - 4 min",
         size: "large",
@@ -420,6 +1534,45 @@ export const restaurantData = [
         name: "Pizza pesto",
         rating: 5.0,
         categories: [6],
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            }, {
+                id: 8,
+                nameicon: "olive",
+                icon: images.olive,
+            },
+
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            },
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            },
+
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            },
+
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+            {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+        ],
         priceRating: affordable,
         photo: images.Detroit2,
         time: "2 - 4 min",
@@ -436,6 +1589,54 @@ export const restaurantData = [
         size: "small",
         people: "1-4",
         price: "$ 4",
+        ingredients: [
+            {
+                id: 1,
+                nameicon: "FLOUR",
+                icon: images.flour0,
+            }, {
+                id: 8,
+                nameicon: "olive",
+                icon: images.olive,
+            },
+
+            {
+                id: 2,
+                nameicon: "mozzarella",
+                icon: images.mozzarella,
+            },
+            {
+                id: 3,
+                nameicon: "peppers",
+                icon: images.peppers,
+            },
+
+            {
+                id: 4,
+                nameicon: "sauce",
+                icon: images.sauce,
+            },
+            {
+                id: 5,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+            {
+                id: 6,
+                nameicon: "yeast",
+                icon: images.yeast,
+            },
+            {
+                id: 7,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+            {
+                id: 8,
+                nameicon: "basil",
+                icon: images.basil,
+            },
+        ],
         categories: [6],
         priceRating: affordable,
         photo: images.Detroit3,

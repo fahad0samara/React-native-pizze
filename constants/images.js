@@ -35,7 +35,17 @@ const newPizz = require("../assets/images/newPizz.jpg");
 const newPizz0 = require("../assets/images/newPizz0.jpg");
 const newPizz1 = require("../assets/images/newPizz1.jpg");
 const newPizz2 = require("../assets/images/newPizz2.jpg");
-
+const mozzarella = require("../assets/images/MOZZARELLA.png");
+const peppers = require("../assets/images/PEPPERS.png");
+const sauce = require("../assets/images/SAUCE.png");
+const flour = require("../assets/images/FLOUR.png");
+const flour0 = require("../assets/images/00FLOUR.png");
+const basil = require("../assets/images/basil.png");
+const tomato = require("../assets/images/tomato.png");
+const oregano = require("../assets/images/oregano.png");
+const salt = require("../assets/images/salt.png");
+const olive = require("../assets/images/olive.png");
+const yeast = require("../assets/images/yeast.png");
 
 export default {
   neapolitan,
@@ -73,5 +83,17 @@ export default {
   newPizz,
   newPizz0,
   newPizz1,
-  newPizz2
+  newPizz2,
+  mozzarella,
+  peppers,
+  sauce,
+  flour,
+  flour0,
+  basil,
+  tomato, oregano,
+  salt,
+  olive,
+  yeast
+
+
 };
