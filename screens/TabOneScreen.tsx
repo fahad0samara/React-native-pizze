@@ -16,7 +16,7 @@ import * as Animatable from "react-native-animatable";
 
 import React from "react";
 
-import {RootTabScreenProps} from "../types";
+import {info, RootTabScreenProps} from "../types";
 import {FontAwesome} from "@expo/vector-icons";
 
 import {restaurantData, TopPizza, categoryData} from "../Data/RestaurantData";
@@ -50,18 +50,14 @@ export default function TabOneScreen({
   const [search, setSearch] = React.useState(""); //search
   const [searchData, setSearchData] = React.useState(restaurantData); //search data
   const [loading, setLoading] = React.useState(false);
-   //loading
+  //loading
 
-
-// search function
+  // search function
   const searchFilterFunction = (text: string) => {
     if (text) {
-  
-      const newData = restaurantData.filter((item) => {
-        const itemData = item.name 
-          ? item.name.toUpperCase()
-          : "".toUpperCase();
-        
+      const newData = restaurantData.filter(item => {
+        const itemData = item.name ? item.name.toUpperCase() : "".toUpperCase();
+
         const textData = text.toUpperCase();
         return itemData.indexOf(textData) > -1;
       });
@@ -69,17 +65,12 @@ export default function TabOneScreen({
       setSearch(text);
 
       setLoading(false);
-
     } else {
       setSearchData(restaurantData);
 
       setSearch(text);
     }
   };
-  
-
-
-   
 
   // price rating
 
@@ -88,9 +79,9 @@ export default function TabOneScreen({
   const [restaurants, setRestaurants] = React.useState(restaurantData); //restaurant data
   const [topPizza, setTopPizza] = React.useState(TopPizza); //top pizza data
 
-  function onSelectCategory(category: any)  {
+  function onSelectCategory(category: any) {
     //filter restaurant
-    let restaurantList = restaurantData.filter(a => 
+    let restaurantList = restaurantData.filter(a =>
       a.categories.includes(category.id)
     );
 
@@ -99,7 +90,7 @@ export default function TabOneScreen({
     setSelectedCategory(category);
   }
 
-  const RenderCategories = ({item}: any) => (
+  const RenderCategories = ({item}: info) => (
     <TouchableOpacity
       style={{
         backgroundColor: "#000",
@@ -117,8 +108,9 @@ export default function TabOneScreen({
           fontWeight: "bold",
           alignItems: "center",
           textAlign: "center",
-
+          // @ts-ignore
           backgroundColor: selectedCategory?.id == item.id ? "#fff" : "#eab308",
+          // @ts-ignore
           color: selectedCategory?.id == item.id ? "#000" : "black",
         }}
       >
@@ -195,15 +187,9 @@ export default function TabOneScreen({
             }}
           />
           <TextInput
-         
-            onChangeText={(text) => searchFilterFunction(text)}
-          
+            onChangeText={text => searchFilterFunction(text)}
             value={search}
-
-
-                
             placeholder="Search for a pizza..."
-
             placeholderTextColor={"#000"}
             style={{
               borderRadius: 10,
@@ -226,6 +212,7 @@ export default function TabOneScreen({
           horizontal
           showsHorizontalScrollIndicator={false}
           keyExtractor={item => `${item.id}`}
+          // @ts-ignore
           renderItem={RenderCategories}
           contentContainerStyle={{paddingVertical: 20}}
         />

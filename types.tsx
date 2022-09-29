@@ -3,10 +3,13 @@
  * https://reactnavigation.org/docs/typescript/
  */
 
-import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
-import { CompositeScreenProps, NavigatorScreenParams } from '@react-navigation/native';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import HomeScreen from './screens/HomeScreen';
+import {BottomTabScreenProps} from "@react-navigation/bottom-tabs";
+import {
+  CompositeScreenProps,
+  NavigatorScreenParams,
+} from "@react-navigation/native";
+import {NativeStackScreenProps} from "@react-navigation/native-stack";
+import HomeScreen from "./screens/HomeScreen";
 
 declare global {
   namespace ReactNavigation {
@@ -15,7 +18,6 @@ declare global {
 }
 
 export type RootStackParamList = {
-
   Root: NavigatorScreenParams<RootTabParamList> | undefined;
   HomeScreen: NavigatorScreenParams<RootTabParamList> | undefined;
   Details: NavigatorScreenParams<RootTabParamList> | undefined;
@@ -23,48 +25,29 @@ export type RootStackParamList = {
   NotFound: undefined;
 };
 
-export type RootStackScreenProps<Screen extends keyof RootStackParamList> = NativeStackScreenProps<
-  RootStackParamList,
-  Screen
->;
+export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
+  NativeStackScreenProps<RootStackParamList, Screen>;
 
 export type RootTabParamList = {
   TabOne: undefined;
   TabTwo: undefined;
 };
-export type RootCategory = {
-id: number;
-    name: string;
-    rating: number;
-    categories: number[];
-    priceRating: number;
-    size: string;
-    people: string;
-    price: string;
-    photo: any;
-    time: string;
-    location: {
-        latitude: number;
-        longitude: number;
-    };
+export type info = {
+  id: string;
+  item: any;
+
+  name: string;
+  image: string;
+  rating: number;
+  categories: number[];
+  priceRating: number;
+  duration: string;
+  location: string;
   description: string;
-  item: {
-    name: string;
-    price: string;
-    photo: any;
-
-  }[]
-  | undefined;
-
-  
-
 };
-  
 
-
-
-
-export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<
-  BottomTabScreenProps<RootTabParamList, Screen>,
-  NativeStackScreenProps<RootStackParamList>
->;
+export type RootTabScreenProps<Screen extends keyof RootTabParamList> =
+  CompositeScreenProps<
+    BottomTabScreenProps<RootTabParamList, Screen>,
+    NativeStackScreenProps<RootStackParamList>
+  >;

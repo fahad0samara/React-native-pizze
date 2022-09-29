@@ -1,20 +1,13 @@
-/**
- * If you are not familiar with React Navigation, refer to the "Fundamentals" guide:
- * https://reactnavigation.org/docs/getting-started
- *
- */
-import {FontAwesome} from "@expo/vector-icons";
-import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
-import {
-  NavigationContainer,
-  DefaultTheme,
-  DarkTheme,
-} from "@react-navigation/native";
-import {createNativeStackNavigator} from "@react-navigation/native-stack";
-import * as React from "react";
-import {ColorSchemeName, Pressable} from "react-native";
-import Details from "../screens/Details";
+import Icon, {Icons} from "./Icon";
+import * as Animatable from "react-native-animatable";
 
+import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+import {NavigationContainer} from "@react-navigation/native";
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import React, {useEffect, useRef} from "react";
+
+import Details from "../screens/Details";
+import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
 
 import HomeScreen from "../screens/HomeScreen";
 import ModalScreen from "../screens/ModalScreen";
@@ -27,26 +20,16 @@ import {
   RootTabScreenProps,
 } from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
+import like from "../screens/like";
 
-export default function Navigation({
- 
-}: {
- 
-}) {
+export default function Navigation({}: {}) {
   return (
-    <NavigationContainer
-   
-
-    >
+    <NavigationContainer>
       <RootNavigator />
     </NavigationContainer>
   );
 }
 
-/**
- * A root stack navigator is often used for displaying modals on top of all other content.
- * https://reactnavigation.org/docs/modal
- */
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
@@ -79,49 +62,135 @@ function RootNavigator() {
   );
 }
 
-/**
- * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.
- * https://reactnavigation.org/docs/bottom-tab-navigator
- */
-const BottomTab = createBottomTabNavigator<RootTabParamList>();
+const TabArr = [
+  {
+    route: "Home",
+    label: "Home",
+    type: Icons.Ionicons,
+    activeIcon: "grid",
+    inActiveIcon: "grid-outline",
+    component: TabOneScreen,
+  },
+  {
+    route: "like",
+    label: "like",
+    type: Icons.MaterialCommunityIcons,
+    activeIcon: "heart-plus",
+    inActiveIcon: "heart-plus-outline",
+    component: like,
+  },
+  {
+    route: "Cart",
+    label: "Cart",
+    type: Icons.MaterialCommunityIcons,
+    activeIcon: "cart",
+    inActiveIcon: "cart-outline",
+    component: HomeScreen,
+  },
+  {
+    route: "Account",
+    label: "Account",
+    type: Icons.FontAwesome,
+    activeIcon: "user-circle",
+    inActiveIcon: "user-circle-o",
+    component: ModalScreen,
+  },
+];
 
-function BottomTabNavigator() {
+const Tab = createBottomTabNavigator<RootTabParamList>();
 
+const TabButton = (props: {
+  item: any;
+  onPress: any;
+  accessibilityState: any;
+}) => {
+  const {item, onPress, accessibilityState} = props;
+  const focused = accessibilityState.selected;
+  const viewRef = useRef(null);
+
+  useEffect(() => {
+    if (focused) {
+      /*
+      // @ts-ignore */
+
+      viewRef.current.animate({
+        0: {scale: 1.9, rotate: "0deg"},
+        1: {scale: 1.7, rotate: "360deg"},
+      });
+    } else {
+      /*
+      // @ts-ignore */
+      viewRef.current.animate({
+        0: {
+          scale: 1.7,
+          rotate: "360deg",
+        },
+        1: {scale: 1, rotate: "0deg"},
+      });
+    }
+  }, [focused]);
 
   return (
-    <BottomTab.Navigator
-      initialRouteName="TabOne"
-    
+    // @ts-ignore
+    <TouchableOpacity
+      onPress={onPress}
+      activeOpacity={1}
+      style={styles.container}
     >
-      <BottomTab.Screen
-        name="TabOne"
-        component={TabOneScreen}
-        options={({ navigation }: RootTabScreenProps<"TabOne">) => ({
-          headerShown: false,
-        })}
+      <Animatable.View ref={viewRef} duration={1000} style={styles.container}>
+        <Icon
+          type={item.type}
+          name={focused ? item.activeIcon : item.inActiveIcon}
+          color={focused ? "white" : "black"}
+          activeIcon={""}
+          inActiveIcon={""}
+          size={0}
+          route={""}
+          style={undefined}
+        />
+      </Animatable.View>
+    </TouchableOpacity>
+  );
+};
 
+function BottomTabNavigator() {
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+        tabBarStyle: {
+          height: 45,
+          backgroundColor: "#eab308",
+          position: "absolute",
+        },
+      }}
+    >
+      {TabArr.map((item, index) => {
+        return (
+          <Tab.Screen
+            key={index}
+            // @ts-ignore
 
-
-         
-      />
-      <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoScreen}
-        options={{
-          title: "Tab Two",
-          tabBarIcon: ({color}) => <TabBarIcon name="code" color={color} />,
-        }}
-      />
-    </BottomTab.Navigator>
+            name={item.route}
+            // @ts-ignore
+            component={item.component}
+            options={{
+              tabBarShowLabel: false,
+               // @ts-ignore
+              tabBarButton: props =>
+               // @ts-ignore
+               <TabButton {...props} item={item} />,
+            }}
+          />
+        );
+      })}
+    </Tab.Navigator>
   );
 }
-
-/**
- * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
- */
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>["name"];
-  color: string;
-}) {
-  return <FontAwesome size={30} style={{marginBottom: -3}} {...props} />;
-}
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});

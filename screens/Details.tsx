@@ -77,7 +77,7 @@ const ItemDetail = ({route, navigation}: any) => {
           />
         </View>
 
-        {/* Description */}
+        {/* Description and scrollview */}
         <ScrollView
           contentContainerStyle={{paddingLeft: 10}}
           showsVerticalScrollIndicator={false}
@@ -145,74 +145,48 @@ const ItemDetail = ({route, navigation}: any) => {
               style={{
                 flexDirection: "row",
                 paddingHorizontal: 20,
+                marginTop: 20,
+             
                 height: 80,
                 alignItems: "flex-end",
               }}
             >
               <TouchableOpacity
-                style={{marginLeft: 10}}
+                style={{
+                  marginLeft: 10,
+           
+                  width: 40,
+                  height: 40,
+                  borderRadius: 20,
+                  backgroundColor: "rgba(0,0,0,0.5)",
+                  justifyContent: "center",
+                  alignItems: "center",
+
+
+                }}
                 onPress={() => navigation.goBack()}
               >
                 <FontAwesome
-                  name="chevron-left"
-                  size={responsiveFontSize(3)}
+                  name="arrow-left"
+                  size={responsiveFontSize(3.5)}
                   color="white"
                 />
               </TouchableOpacity>
 
-              <View
-                style={{
-                  flex: 1,
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              ></View>
+            
 
-              <TouchableOpacity
-                style={{marginRight: 10}}
-                onPress={() => console.log("Click More")}
-              >
-                <FontAwesome
-                  name="ellipsis-v"
-                  size={responsiveFontSize(4)}
-                  color={"red"}
-                />
-              </TouchableOpacity>
-            </View>
-
-            {/* Item Cover */}
-
-            {/* Item Name and Author */}
-            <View
-              style={{
-                flex: 1.8,
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Text
-                style={{
-                  fontSize: responsiveFontSize(2.5),
-                  color: item.navTintColor,
-                }}
-              >
-                {item.name}
-              </Text>
-              <Text
-                style={{
-                  fontSize: responsiveFontSize(4.5),
-                  color: item.navTintColor,
-                }}
-              >
-                {item.author}
-              </Text>
+            
             </View>
 
             {/* Item Info */}
             <View
               style={{
                 flexDirection: "row",
+
                 paddingVertical: 8,
+                position: "absolute",
+                bottom: 0,
+
                 margin: 20,
                 borderRadius: 10,
                 backgroundColor: "rgba(0,0,00,0.8)",
@@ -385,7 +359,7 @@ const ItemDetail = ({route, navigation}: any) => {
               />
             </TouchableOpacity>
 
-            {/* buy now */}
+            {/* order now */}
             <TouchableOpacity
               style={{
                 flex: 1,
@@ -406,7 +380,7 @@ const ItemDetail = ({route, navigation}: any) => {
                   color: "#fff",
                 }}
               >
-                Buy Now
+                Order Now
               </Text>
             </TouchableOpacity>
           </View>
