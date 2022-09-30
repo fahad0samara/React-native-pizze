@@ -20,7 +20,8 @@ import {
   RootTabScreenProps,
 } from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
-import like from "../screens/like";
+import Like from "../screens/Like";
+import Cart from "../screens/Cart";
 
 export default function Navigation({}: {}) {
   return (
@@ -51,6 +52,11 @@ function RootNavigator() {
         options={{headerShown: false}}
       />
       <Stack.Screen
+        name="Like"
+        component={Like}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
         name="NotFound"
         component={NotFoundScreen}
         options={{title: "Oops!"}}
@@ -72,12 +78,12 @@ const TabArr = [
     component: TabOneScreen,
   },
   {
-    route: "like",
-    label: "like",
+    route: "Like",
+    label: "Like",
     type: Icons.MaterialCommunityIcons,
     activeIcon: "heart-plus",
     inActiveIcon: "heart-plus-outline",
-    component: like,
+    component: Like,
   },
   {
     route: "Cart",
@@ -85,7 +91,7 @@ const TabArr = [
     type: Icons.MaterialCommunityIcons,
     activeIcon: "cart",
     inActiveIcon: "cart-outline",
-    component: HomeScreen,
+    component: Cart,
   },
   {
     route: "Account",

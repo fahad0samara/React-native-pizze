@@ -2,7 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import useCachedResources from './hooks/useCachedResources';
+import {Provider} from "react-redux";
 
+import {store} from "./Redux/store";
 import Navigation from './navigation';
 
 export default function App() {
@@ -14,8 +16,10 @@ export default function App() {
   } else {
     return (
       <SafeAreaProvider>
-        <Navigation  />
-        <StatusBar />
+        <Provider store={store}>
+          <Navigation />
+          <StatusBar />
+        </Provider>
       </SafeAreaProvider>
     );
   }

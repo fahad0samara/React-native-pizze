@@ -16,6 +16,8 @@ import {
   responsiveWidth,
   responsiveFontSize,
 } from "react-native-responsive-dimensions";
+import {useDispatch, useSelector} from "react-redux";
+import {addToCart, increaseCartQuantity} from "../Redux/action";
 const LineDivider = () => {
   return (
     <View style={{width: 1, paddingVertical: 5}}>
@@ -30,11 +32,30 @@ const LineDivider = () => {
   );
 };
 
-const ItemDetail = ({route, navigation}: any) => {
+const ItemDetail = ({ route, navigation }: any) => {
+
+
+   let storeData = useSelector(store => store.storeData);
+   let cartItems = useSelector(store => store.cartData);
   let {item} = route.params;
   const [scrollViewWholeHeight, setScrollViewWholeHeight] = React.useState(4);
   const [scrollViewVisibleHeight, setScrollViewVisibleHeight] =
     React.useState(0);
+  const dispatch = useDispatch();
+  
+  //  add to cart
+  const AddTOcart = () => {
+    let itemIndex = cartItems.findIndex((cartItem: any) => {
+      return cartItem.id === item.id;
+    });
+    if (itemIndex === -1) {
+      dispatch(addToCart(item));
+    } else {
+      dispatch(increaseCartQuantity(itemIndex));
+    }
+  };
+
+    
 
   const indicator = new Animated.Value(0);
 
@@ -146,7 +167,7 @@ const ItemDetail = ({route, navigation}: any) => {
                 flexDirection: "row",
                 paddingHorizontal: 20,
                 marginTop: 20,
-             
+
                 height: 80,
                 alignItems: "flex-end",
               }}
@@ -154,15 +175,13 @@ const ItemDetail = ({route, navigation}: any) => {
               <TouchableOpacity
                 style={{
                   marginLeft: 10,
-           
+
                   width: 40,
                   height: 40,
                   borderRadius: 20,
                   backgroundColor: "rgba(0,0,0,0.5)",
                   justifyContent: "center",
                   alignItems: "center",
-
-
                 }}
                 onPress={() => navigation.goBack()}
               >
@@ -172,10 +191,6 @@ const ItemDetail = ({route, navigation}: any) => {
                   color="white"
                 />
               </TouchableOpacity>
-
-            
-
-            
             </View>
 
             {/* Item Info */}
@@ -350,7 +365,9 @@ const ItemDetail = ({route, navigation}: any) => {
                 alignItems: "center",
                 justifyContent: "center",
               }}
-              onPress={() => navigation.navigate("Saved", console.log(item))}
+              onPress={() => navigation.navigate("Like", AddTOcart(),
+                
+              )}
             >
               <FontAwesome
                 name="heart"
