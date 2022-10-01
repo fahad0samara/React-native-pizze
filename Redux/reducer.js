@@ -1,12 +1,36 @@
-import { ALL_PRODUCTS, CART_PRODUCTS, REMOVE_DATA_FROM_CART, INCREASE_CART_QUANTITY, DECREASE_CART_QUANTITY, REMOVE_ALL_FROM_CART } from "./action";
+
+import {
+
+    ALL_PRODUCTS,
+    CART_PRODUCTS,
+    REMOVE_DATA_FROM_CART
+    , INCREASE_CART_QUANTITY,
+    CART_PRODUCTS2,
+    REMOVE_DATA_FROM_CART2,
+    DECREASE_CART_QUANTITY,
+    REMOVE_ALL_FROM_CART
+} from "./action";
 
 const initialState = {
+
     storeData: [],
-    cartData: []
+
+
+
+
+    cartData: [],
+
+    cartData2: [],
 };
+
+
+
+
+
 
 export const reducer = (state = initialState, { type, payload }) => {
     switch (type) {
+
         //* all products 
         case ALL_PRODUCTS: {
             return {
@@ -14,6 +38,11 @@ export const reducer = (state = initialState, { type, payload }) => {
                 storeData: payload
             };
         };
+        // quantity
+
+
+
+
 
         //* add to cart
         case CART_PRODUCTS: {
@@ -22,12 +51,30 @@ export const reducer = (state = initialState, { type, payload }) => {
                 cartData: [...state.cartData, payload]
             };
         };
+        // add to cart2
+        case CART_PRODUCTS2: {
+            return {
+                ...state,
+                cartData2: [...state.cartData2, payload]
+
+            };
+        };
+
 
         //* increase quantity
         case INCREASE_CART_QUANTITY: {
             return {
                 ...state,
-                cartData: state.cartData.map((item) => item.id === payload ? { ...item, quantity: item.quantity + 1 } : item
+                cartData: state.cartData.map((item) => {
+                    if (item.id === payload) {
+                        return {
+                            ...item,
+                            quantity: item.quantity + 1
+                        };
+                    }
+                    return item;
+                }
+
                 )
             };
         };
@@ -36,10 +83,23 @@ export const reducer = (state = initialState, { type, payload }) => {
         case DECREASE_CART_QUANTITY: {
             return {
                 ...state,
-                cartData: state.cartData.map((item) => item.id === payload ? { ...item, quantity: item.quantity - 1 } : item
-                )
+                cartData: state.cartData.map((item) => {
+                    if (item.id === payload) {
+                        return {
+                            ...item,
+                            quantity: item.quantity - 1
+                        };
+                    }
+                    return item;
+
+                })
             };
         };
+
+
+
+
+
 
         //* remove item from cart
         case REMOVE_DATA_FROM_CART: {
@@ -48,6 +108,13 @@ export const reducer = (state = initialState, { type, payload }) => {
                 cartData: state.cartData.filter(item => item.id !== payload)
 
             };
+        }
+        // remove item from cart2
+        case REMOVE_DATA_FROM_CART2: {
+            return {
+                ...state,
+                cartData2: state.cartData2.filter(item => item.id !== payload)
+            }
         }
 
         //* remove All item from cart

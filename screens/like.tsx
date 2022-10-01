@@ -12,7 +12,8 @@ import {
   decreaseCartQuantity,
   deleteAllFromCart,
   increaseCartQuantity,
-  removeDataFromCart,
+  
+  removeDataFromCart2,
 } from "../Redux/action";
 import {
   responsiveHeight,
@@ -21,11 +22,17 @@ import {
 } from "react-native-responsive-dimensions";
 import {FontAwesome} from "@expo/vector-icons";
 const Like = ({navigation}: any) => {
-  const cartData = useSelector(state => state.cartData);
+  const cartData2 = useSelector(state => state.cartData2);
   const dispatch = useDispatch();
-  const [currentData, setCurrentData] = React.useState("");
+  const deleteAll = () => {
+    dispatch(deleteAllFromCart());
+  };
 
-  return cartData.length > 0 ? (
+
+
+
+
+  return cartData2.length > 0 ? (
     <View
       style={{
         flex: 1,
@@ -81,7 +88,7 @@ const Like = ({navigation}: any) => {
       </View>
 
       <FlatList
-        data={cartData}
+        data={cartData2}
         renderItem={({item}) => (
           <>
             <View
@@ -158,7 +165,7 @@ const Like = ({navigation}: any) => {
                       marginLeft: 7,
                     }}
                     onPress={() => {
-                      dispatch(removeDataFromCart(item.id));
+                      dispatch(removeDataFromCart2(item.id));
                     }}
                   >
                     <Text
@@ -175,15 +182,7 @@ const Like = ({navigation}: any) => {
                     </Text>
                   </TouchableOpacity>
                 </View>
-                <Text
-                  style={{
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "#fff",
-                  }}
-                >
-                  {currentData}
-                </Text>
+            
               </View>
             </View>
           </>

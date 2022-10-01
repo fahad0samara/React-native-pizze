@@ -15,26 +15,26 @@ export const TopPizza = [
         price: "$ 5",
         ingredients: [
             {
-                id: 1,
+                id: '11111111111aaaa',
                 nameicon: "FLOUR",
                 icon: images.flour,
             }, {
-                id: 6,
+                id: '1233eeddddddddd',
                 nameicon: "yeast",
                 icon: images.yeast,
             },
             {
-                id: 2,
+                id: '1233eessssddddddddd',
                 nameicon: "mozzarella",
                 icon: images.mozzarella,
             },
             {
-                id: 3,
+                id: 'sss222222222222222222sss',
                 nameicon: "peppers",
                 icon: images.peppers,
             },
             {
-                id: 4,
+                  id: '123ssssssssss3eeddddddddd',
                 nameicon: "sauce",
                 icon: images.sauce,
             },
@@ -93,7 +93,7 @@ export const TopPizza = [
             "No longer an immigrant tradition, Chicago-style deep dish pizza is now one of Chicago's cultural and culinary icons. The dish is not just popular in Chicago, but all over the world, and its popularity is evident in the fact that there is even a National Deep Dish Pizza Day, celebrated every year on April 5.",
     },
     {
-        id: 3,
+        id: '1233eedddssssssssssssdddddd',
         name: "rustica",
         rating: 5,
         time: "3 - 5 min",
@@ -137,7 +137,7 @@ export const TopPizza = [
             "Since those times, Margherita has become one of the most popular pizza varieties in the world, and in 2009, it was protected as one of the three Pizze Napoletane with an STG European label of protection, proving its excellence in flavor, ingredients, and traditional pizza-making techniques.",
     },
     {
-        id: 4,
+        id: '1233eeddddddeeeeeeeeeeeeddd',
         name: "Apizza",
         rating: 5,
         size: "small",
@@ -183,7 +183,7 @@ export const TopPizza = [
 ];
 export const newPizz = [
     {
-        id: 1,
+        id: '12wwwwwww33essssssssssseddddddddd',
         name: "Pizza ortolan",
         rating: 3.6,
         size: "small",
@@ -230,7 +230,7 @@ export const newPizz = [
             "Italy’s most emblematic culinary creation, the genuine pizza Napoletana is made with just a few simple ingredients and prepared in only two variations – marinara, the basic Neapolitan pizza topped with a tomato-based sauce flavored with garlic and oregano, and margherita, which is topped with tomatoes, mozzarella, and fresh basil leaves, a delicious combination whose colors are said to represent the Italian flag.",
     },
     {
-        id: 2,
+        id: '1233eedddddssssssssssssssssssssdddd',
         name: "Pizza rustical",
         rating: 4,
         size: "small",
@@ -274,7 +274,7 @@ export const newPizz = [
             "The crust is very thin at the base, and the dough puffs up on the sides, which results in airy crust that should have typical charred 'leopard spots' if baked properly. The origins of this iconic Neapolitan dish can be traced to the early 1700s, when what we know today as pizza marinara was first described by Italian chef, writer, and philosopher Vincenzo Corrado in his treatise on the eating habits of the people of Naples",
     },
     {
-        id: 3,
+          id: '123ddddd',
         name: "Tarte flambée",
         rating: 4.5,
         size: "small",
@@ -324,7 +324,7 @@ export const newPizz = [
             "Almost 200 years later, in 1889, the premier Neapolitan master pizzaiolo Raffaele Esposito added mozzarella to the mix and invented the margherita, which is now generally cited as the first modern pizza. Originally dubbed la pizza tricolore, Esposito’s creation is said to have been made in honor of and named after Margherita of Savoy, the Queen consort of the Kingdom of Italy, who was visiting Naples at the time.",
     },
     {
-        id: 4,
+          id: '1233sssseeddddddddd',
         name: "pesto Genovese",
         rating: 4.2,
         size: "small",
@@ -381,7 +381,7 @@ export const newPizz = [
 ];
 export const restaurantData = [
     {
-        id: 1,
+            id: '123ee33eeddddddddd',
         name: "Pizza Marinara",
         rating: 4.8,
         categories: [1],
@@ -434,7 +434,7 @@ export const restaurantData = [
         time: "30 - 45 min",
     },
     {
-        id: 2,
+          id: '12ssssssss33eeddddddddd',
         name: "Pizza Margherita",
         rating: 3.5,
         size: "medium",
@@ -485,7 +485,7 @@ export const restaurantData = [
         time: "15 - 20 min",
     },
     {
-        id: 3,
+           id: 'www1233eeddddddddd',
         name: "Tomato Pie",
         rating: 3.8,
         size: "large",
@@ -532,7 +532,7 @@ export const restaurantData = [
     },
 
     {
-        id: 4,
+           id: '1233eddd',
         name: "Pizza Margherita",
         rating: 3.7,
         categories: [1],
@@ -583,7 +583,7 @@ export const restaurantData = [
             "This unique type of pizza is characterized by its half-round shape, made by folding a full-sized pizza in half. Hailing from 18th century Naples, calzone literally means pant leg, referring to the fact that calzone's original purpose was to be a pizza which can be consumed while walking or standing",
     },
     {
-        id: 5,
+        id: '1233eedddd777ddddd',
         name: " Pizza ortolana",
         rating: 4.8,
         categories: [2],
@@ -634,7 +634,7 @@ export const restaurantData = [
         time: "15 - 20 min",
     },
     {
-        id: 6,
+            id: '1233edddddddddwwwwwwwwweddddddddd',
         name: " Pizza rustica",
         rating: 4.4,
         categories: [2],
@@ -690,7 +690,7 @@ export const restaurantData = [
         time: "5 - 7 min",
     },
     {
-        id: 7,
+        id: '1dddddddd',
         name: "Pizza Apizza",
         rating: 4.9,
         categories: [2],
@@ -742,7 +742,7 @@ export const restaurantData = [
         time: "3 - 4 min",
     },
     {
-        id: 8,
+        id: '123388888ddddd',
         name: "Tomato Pie",
         rating: 4.7,
         categories: [2],
@@ -794,7 +794,7 @@ export const restaurantData = [
             "Quattro formaggi is a variety of Italian pizza topped with a combination of four kinds of cheese, as the name suggests. Traditionally, the cheeses should be mozzarella and three other, local cheeses, depending on the region, such as Gorgonzola, Fontina, and Parmigiano-Reggiano",
     },
     {
-        id: 9,
+            id: 'ddd3333ddddd',
         name: "Pizza pesto",
         rating: 4.6,
         size: "large",

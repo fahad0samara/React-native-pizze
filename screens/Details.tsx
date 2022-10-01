@@ -1,5 +1,5 @@
 import {FontAwesome} from "@expo/vector-icons";
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -17,7 +17,7 @@ import {
   responsiveFontSize,
 } from "react-native-responsive-dimensions";
 import {useDispatch, useSelector} from "react-redux";
-import {addToCart, increaseCartQuantity} from "../Redux/action";
+import {addToCart,addToCart2, increaseCartQuantity} from "../Redux/action";
 const LineDivider = () => {
   return (
     <View style={{width: 1, paddingVertical: 5}}>
@@ -35,24 +35,44 @@ const LineDivider = () => {
 const ItemDetail = ({ route, navigation }: any) => {
 
 
-   let storeData = useSelector(store => store.storeData);
-   let cartItems = useSelector(store => store.cartData);
+
+ 
+   let cartItems2 = useSelector(store => store.cartData2);
   let {item} = route.params;
   const [scrollViewWholeHeight, setScrollViewWholeHeight] = React.useState(4);
   const [scrollViewVisibleHeight, setScrollViewVisibleHeight] =
     React.useState(0);
-  const dispatch = useDispatch();
-  
-  //  add to cart
+   const [products, setProducts] = useState([]);
+   const dispatch = useDispatch();
+   const [loading, setLoading] = useState(true);
+
+ 
+  let cartItems = useSelector(store => store.cartData);
+    const handleCart = item => {
+      const {id} = item;
+      let newItem = {...item};
+
+      let find = cartItems.find(item => item.id === id);
+      if (!find) {
+        newItem.quantity = 1;
+        dispatch(addToCart(newItem));
+      } else {
+        dispatch(increaseCartQuantity(id));
+      }
+    };
+
+
+  // add to order
   const AddTOcart = () => {
-    let itemIndex = cartItems.findIndex((cartItem: any) => {
-      return cartItem.id === item.id;
+    let itemIndex = cartItems2.findIndex((cartItems2: any) => {
+      return cartItems2.id === item.id;
     });
     if (itemIndex === -1) {
-      dispatch(addToCart(item));
+      dispatch(addToCart2(item));
     } else {
       dispatch(increaseCartQuantity(itemIndex));
     }
+
   };
 
     
@@ -365,9 +385,7 @@ const ItemDetail = ({ route, navigation }: any) => {
                 alignItems: "center",
                 justifyContent: "center",
               }}
-              onPress={() => navigation.navigate("Like", AddTOcart(),
-                
-              )}
+              onPress={() => navigation.navigate("Like", AddTOcart())}
             >
               <FontAwesome
                 name="heart"
@@ -387,7 +405,7 @@ const ItemDetail = ({ route, navigation }: any) => {
                 alignItems: "center",
                 justifyContent: "center",
               }}
-              onPress={() => console.log("buy now")}
+              onPress={() => navigation.navigate("Cart", handleCart(item))}
             >
               <Text
                 style={{
