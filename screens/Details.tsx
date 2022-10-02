@@ -1,5 +1,5 @@
 import {FontAwesome} from "@expo/vector-icons";
-import React, { useState } from "react";
+import React, {useState} from "react";
 import {
   View,
   Text,
@@ -17,7 +17,7 @@ import {
   responsiveFontSize,
 } from "react-native-responsive-dimensions";
 import {useDispatch, useSelector} from "react-redux";
-import {addToCart,addToCart2, increaseCartQuantity} from "../Redux/action";
+import {addToCart, addToCart2, increaseCartQuantity} from "../Redux/action";
 const LineDivider = () => {
   return (
     <View style={{width: 1, paddingVertical: 5}}>
@@ -32,35 +32,29 @@ const LineDivider = () => {
   );
 };
 
-const ItemDetail = ({ route, navigation }: any) => {
-
-
-
- 
-   let cartItems2 = useSelector(store => store.cartData2);
+const ItemDetail = ({route, navigation}: any) => {
+  let cartItems2 = useSelector(store => store.cartData2);
   let {item} = route.params;
   const [scrollViewWholeHeight, setScrollViewWholeHeight] = React.useState(4);
   const [scrollViewVisibleHeight, setScrollViewVisibleHeight] =
     React.useState(0);
-   const [products, setProducts] = useState([]);
-   const dispatch = useDispatch();
-   const [loading, setLoading] = useState(true);
+  const [products, setProducts] = useState([]);
+  const dispatch = useDispatch();
+  const [loading, setLoading] = useState(true);
 
- 
   let cartItems = useSelector(store => store.cartData);
-    const handleCart = item => {
-      const {id} = item;
-      let newItem = {...item};
+  const handleCart = item => {
+    const {id} = item;
+    let newItem = {...item};
 
-      let find = cartItems.find(item => item.id === id);
-      if (!find) {
-        newItem.quantity = 1;
-        dispatch(addToCart(newItem));
-      } else {
-        dispatch(increaseCartQuantity(id));
-      }
-    };
-
+    let find = cartItems.find(item => item.id === id);
+    if (!find) {
+      newItem.quantity = 1;
+      dispatch(addToCart(newItem));
+    } else {
+      dispatch(increaseCartQuantity(id));
+    }
+  };
 
   // add to order
   const AddTOcart = () => {
@@ -72,10 +66,7 @@ const ItemDetail = ({ route, navigation }: any) => {
     } else {
       dispatch(increaseCartQuantity(itemIndex));
     }
-
   };
-
-    
 
   const indicator = new Animated.Value(0);
 

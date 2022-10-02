@@ -8,15 +8,14 @@ import {
     CART_PRODUCTS2,
     REMOVE_DATA_FROM_CART2,
     DECREASE_CART_QUANTITY,
-    REMOVE_ALL_FROM_CART
+    REMOVE_ALL_FROM_CART,
+    TOTAL_PRICE
 } from "./action";
 
 const initialState = {
 
     storeData: [],
-
-
-
+    totalPrice: 0,
 
     cartData: [],
 
@@ -38,8 +37,9 @@ export const reducer = (state = initialState, { type, payload }) => {
                 storeData: payload
             };
         };
-        // quantity
-
+       
+      
+            
 
 
 
@@ -59,7 +59,16 @@ export const reducer = (state = initialState, { type, payload }) => {
 
             };
         };
-
+//  total price of cart
+        case TOTAL_PRICE: {
+            return {
+                ...state,
+                totalPrice: payload
+            };
+        };
+            
+     
+        
 
         //* increase quantity
         case INCREASE_CART_QUANTITY: {

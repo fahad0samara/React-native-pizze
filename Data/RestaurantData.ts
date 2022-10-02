@@ -12,7 +12,8 @@ export const TopPizza = [
         size: "small",
         photo: images.TopImgae,
         people: "1-4",
-        price: "$ 5",
+               price:5,
+
         ingredients: [
             {
                 id: '11111111111aaaa',
@@ -50,7 +51,8 @@ export const TopPizza = [
         photo: images.TopImgae0,
         people: "1-4",
         time: "2 - 5 min",
-        price: "$ 6",
+               price:6,
+
         ingredients: [
             {
                 id: 1,
@@ -100,7 +102,8 @@ export const TopPizza = [
         size: "small",
         photo: images.TopImgae1,
         people: "1-4",
-        price: "$ 3.5",
+               price:7.6,
+
         ingredients: [
             {
                 id: 1,
@@ -144,7 +147,8 @@ export const TopPizza = [
         time: "3 - 5 min",
         photo: images.TopImgae2,
         people: "1-4",
-        price: "$ 7.6",
+         price:7.6,
+
         ingredients: [
             {
                 id: 1,
@@ -190,7 +194,8 @@ export const newPizz = [
         time: "3 - 5 min",
         photo: images.newPizz,
         people: "1-4",
-        price: "$ 4.1",
+               price:6,
+
         ingredients: [
             {
                 id: 1,
@@ -236,7 +241,8 @@ export const newPizz = [
         size: "small",
         photo: images.newPizz0,
         people: "1-4",
-        price: "$ 6",
+               price:6,
+
         time: "3 - 5 min",
         ingredients: [
             {
@@ -281,7 +287,8 @@ export const newPizz = [
         time: "2.5 - 5 min",
         photo: images.newPizz1,
         people: "1-4",
-        price: "$ 5",
+               price:5,
+
         ingredients: [
             {
                 id: 1,
@@ -328,6 +335,7 @@ export const newPizz = [
         name: "pesto Genovese",
         rating: 4.2,
         size: "small",
+        price:4.6,
         photo: images.newPizz2,
         people: "1-4",
         time: "4 - 5 min",
@@ -374,7 +382,7 @@ export const newPizz = [
                 icon: images.basil,
             },
         ],
-        price: "$ 7.6",
+       
         description:
             "In 2010, as one of Italy’s most popular foods worldwide, pizza Napoletana was officially recognized by the European Union and granted the designation of Traditional Specialty Guaranteed. And remember, a good pizza Napoletana doesn't need any additions other than the designated toppings.",
     },
@@ -386,10 +394,10 @@ export const restaurantData = [
         rating: 4.8,
         categories: [1],
         Top: true,
-        priceRating: affordable,
+        price:  3.9,
         size: "small",
         people: "1-4",
-        price: "$ 4",
+        
         ingredients: [
             {
                 id: 1,
@@ -479,8 +487,9 @@ export const restaurantData = [
         description:
             "It was made by a chef named Raffaele Esposito of Pizzeria Brandi, who is credited for its invention. The Queen loved the dish, and Esposito named it after her - pizza Margherita, but such a pizza was also made before that time, and can be dated back to at least 1866, when the most popular pizza toppings included basil, cheese, and tomatoes, but the pizza was not yet named Margherita.",
         categories: [1],
-        Top: true,
-        priceRating: expensive,
+         price:7.6,
+
+       
         photo: images.neapolitan1,
         time: "15 - 20 min",
     },
@@ -490,7 +499,7 @@ export const restaurantData = [
         rating: 3.8,
         size: "large",
         people: "6-7",
-        price: "$ 9.4",
+      
         categories: [1],
         ingredients: [
             {
@@ -524,7 +533,8 @@ export const restaurantData = [
                 icon: images.basil,
             },
         ],
-        priceRating: expensive,
+               price:6.3,
+
         photo: images.neapolitan2,
         description:
             "Since those times, Margherita has become one of the most popular pizza varieties in the world, and in 2009, it was protected as one of the three Pizze Napoletane with an STG European label of protection, proving its excellence in flavor, ingredients, and traditional pizza-making techniques.",
@@ -536,7 +546,8 @@ export const restaurantData = [
         name: "Pizza Margherita",
         rating: 3.7,
         categories: [1],
-        priceRating: expensive,
+                price:4,
+
         photo: images.neapolitan3,
         time: "10 - 15 min",
         size: "small",
@@ -578,7 +589,7 @@ export const restaurantData = [
             },
         ],
         people: "1-4",
-        price: "$ 4",
+      
         description:
             "This unique type of pizza is characterized by its half-round shape, made by folding a full-sized pizza in half. Hailing from 18th century Naples, calzone literally means pant leg, referring to the fact that calzone's original purpose was to be a pizza which can be consumed while walking or standing",
     },
@@ -626,10 +637,11 @@ export const restaurantData = [
             },
         ],
         people: "3-5",
-        price: "$ 6.6",
+              price:5.6,
+
         description:
             "Typically, calzones are filled with meats such as salami or ham and cheeses such as mozzarella, ricotta, parmesan, and pecorino whereas fried calzones with mozzarella and tomatoes are a specialty from the Italian region of Apulia, and are known as panzerotti.",
-        priceRating: affordable,
+      
         photo: images.Chicago,
         time: "15 - 20 min",
     },
@@ -638,7 +650,8 @@ export const restaurantData = [
         name: " Pizza rustica",
         rating: 4.4,
         categories: [2],
-        priceRating: affordable,
+        price: 1.9,
+      
         size: "large",
         people: "6-7",
         Top: true,
@@ -647,11 +660,7 @@ export const restaurantData = [
                 id: 1,
                 nameicon: "FLOUR",
                 icon: images.flour0,
-            }, {
-                id: 6,
-                nameicon: "yeast",
-                icon: images.yeast,
-            }, {
+            },  {
                 id: 8,
                 nameicon: "olive",
                 icon: images.olive,
@@ -683,7 +692,7 @@ export const restaurantData = [
                 icon: images.basil,
             },
         ],
-        price: "$ 9.4",
+       
         photo: images.Chicago1,
         description:
             "Pepperoni pizza is an American pizza variety which includes one of the country's most beloved toppings. Pepperoni is actually a corrupted form of peperoni (one “p”), which denotes a large pepper in Italian, but nowadays it denotes a spicy salami, usually made with a mixture of beef, pork, and spices.",
@@ -733,11 +742,12 @@ export const restaurantData = [
             },
         ],
         people: "1-4",
+         price:  2.3,
         description:
 
             "The popularity of pepperoni pizza had only started to rise in the 1950s. Nowadays, beef pepperoni pizza is the most popular pizza variety, but there are also versions such as fish pepperoni pizza and port pepperoni pizza. The preparation varies from one state to another, but the popularity of this pizza has made it a staple across the United States, and it’s usually prepared simply with mozzarella, tomato sauce, and pepperoni",
-        price: "$ 4",
-        priceRating: affordable,
+        
+   
         photo: images.Chicago2,
         time: "3 - 4 min",
     },
@@ -786,8 +796,9 @@ export const restaurantData = [
                 icon: images.basil,
             },
         ],
-        price: "$ 9.4",
-        priceRating: affordable,
+               price:6.3,
+
+   
         photo: images.Chicago3,
         time: "35 - 40 min",
         description:
@@ -799,7 +810,8 @@ export const restaurantData = [
         rating: 4.6,
         size: "large",
         people: "6-7",
-        price: "$ 9.4",
+               price:6.3,
+
         ingredients: [
             {
                 id: 1,
@@ -841,7 +853,7 @@ export const restaurantData = [
             "Optionally, the pizza can be further enriched with the addition of basil and tomato. The combination of cheeses gives the pizza an unusual, unique flavor that is loved by cheese-aficionados all over the world",
         categories: [3],
         Top: true,
-        priceRating: affordable,
+    
         photo: images.Sicilian,
         time: "35 - 40 min",
     },
@@ -888,11 +900,12 @@ export const restaurantData = [
                 icon: images.basil,
             },
         ],
-        price: "$ 6.6",
+              price:5.6,
+
 
         categories: [3],
         Top: true,
-        priceRating: affordable,
+     
         photo: images.Sicilian1,
         time: "35 - 40 min",
         description:
@@ -904,8 +917,9 @@ export const restaurantData = [
         rating: 3.9,
         categories: [3],
         size: "small",
+         price:  1.9,
         people: "1-4",
-        price: "$ 4",
+        
         ingredients: [
             {
                 id: 1,
@@ -952,7 +966,7 @@ export const restaurantData = [
                 icon: images.basil,
             },
         ],
-        priceRating: affordable,
+      
         photo: images.Sicilian2,
         time: "35 - 40 min",
         description:
@@ -1004,22 +1018,23 @@ export const restaurantData = [
                 icon: images.basil,
             },
         ],
-        priceRating: affordable,
+      
         Top: true,
         photo: images.Sicilian3,
         time: "35 - 40 min",
         size: "medium",
         people: "3-5",
-        price: "$ 6.6",
+              price:5.6,
+
         description:
             "No longer an immigrant tradition, Chicago-style deep dish pizza is now one of Chicago's cultural and culinary icons. The dish is not just popular in Chicago, but all over the world, and its popularity is evident in the fact that there is even a National Deep Dish Pizza Day, celebrated every year on April 5.",
     },
     {
-        id: 13,
+        id: 'ffe34111',
         name: "Grandma Pie",
         rating: 3.6,
         categories: [4],
-        priceRating: affordable,
+      
         photo: images.Greek,
         size: "large",
         ingredients: [
@@ -1064,13 +1079,14 @@ export const restaurantData = [
             },
         ],
         people: "6-7",
-        price: "$ 9.4",
+               price:6.3,
+
         time: "10 - 20 min",
         description:
             "Despite its name, Hawaiian pizza is a Canadian invention, a classic American-style pie topped with cheese, ham, and pineapple chunks. It was originally created by Sam Panopoulos in Ontario in the mid-1960s, when he added pineapple to the dish and started serving it to the customers of his Satellite Restaurant.",
     },
     {
-        id: 14,
+        id: '55gfffdfff',
         name: "Pizza pesto",
         rating: 4.6,
         categories: [4],
@@ -1110,12 +1126,13 @@ export const restaurantData = [
                 icon: images.yeast,
             },
         ],
-        priceRating: affordable,
+      
         photo: images.Greek1,
         time: "3 - 4 min",
         size: "medium",
         people: "3-5",
-        price: "$ 6.6",
+              price:5.6,
+
         description:
             "Although sfincione doesn't contain mozzarella, Italian bakeries in NYC had access to inexpensive mozzarella so it was only logical that they began to top their sfincione with it. Nowadays, Sicilian-style pizza is popular in numerous Italian-American communities in New York, New Jersey, Michigan, Connecticut, Rhode Island, and Massachusetts.",
     },
@@ -1167,15 +1184,16 @@ export const restaurantData = [
         categories: [4],
         size: "small",
         people: "1-4",
-        price: "$ 4",
-        priceRating: affordable,
+                price:4.6,
+
+      
         photo: images.Greek2,
         time: "3 - 4 min",
         description:
             "In the United States, Sicilian pizza denotes a thick, square-shaped dough topped with mozzarella cheese and tomato sauce. The sauce is often placed on top of the cheese in order for the crust to be well-cooked. This pizza was brought to the United States (primarily New York) by Sicilian immigrants, and it was derived from sfincione.",
     },
     {
-        id: 16,
+        id: 'rrrrrr',
         name: "Pizza Fugazzeta",
         rating: 4.2,
         ingredients: [
@@ -1212,22 +1230,24 @@ export const restaurantData = [
         ],
         size: "medium",
         people: "3-5",
-        price: "$ 6.6",
+              price:5.6,
+
         description:
             "Pizza al taglio is a variety of Italian pizza that is baked in rectangular trays and sold sliced into squares or rectangles. Prices can be marked either per slice of pizza or per kilogram. The first pizza al taglio was baked in Rome in the late 1950s, when it was topped with olive oil and tomato sauce.",
 
         categories: [4],
-        priceRating: affordable,
+      
         photo: images.Greek3,
         time: "3 - 4 min",
     },
     {
-        id: 17,
+        id: '5fdadczcc',
         name: "Pizza California",
         rating: 3.2,
         size: "small",
         people: "1-4",
-        price: "$ 4",
+                price:4.6,
+
         ingredients: [
             {
                 id: 1,
@@ -1266,7 +1286,7 @@ export const restaurantData = [
             },
         ],
         categories: [5],
-        priceRating: affordable,
+      
         photo: images.California,
 
         description:
@@ -1279,8 +1299,9 @@ export const restaurantData = [
         categories: [4],
         size: "large",
         people: "6-7",
-        price: "$ 9.4",
-        priceRating: affordable,
+               price:6.3,
+
+      
         photo: images.Greek3,
         time: "3 - 4 min",
         ingredients: [
@@ -1330,7 +1351,7 @@ export const restaurantData = [
             "Today, the dish is one of the most loved street food items both in Rome and in most of Italy. When making pizza al taglio, it is important to let the dough rise and ferment for a longer period of time. The dough is usually baked, topped, and then baked once more, resulting in an evenly-cooked pizza that's light, airy, and easily digestable.",
     },
     {
-        id: 18,
+        id: 'dfffffffffffffff',
         name: "Garlic Fingers",
         rating: 4.8,
         categories: [5],
@@ -1369,19 +1390,20 @@ export const restaurantData = [
             },
         ],
         people: "3-5",
-        price: "$ 6.6",
+              price:5.6,
+
         description:
             "This Italian pizza variety is prepared with a base of classic pizza dough that is topped with mozzarella and then shortly baked. The fresh ingredients added on top typically include cherry tomatoes, arugula, prosciutto, and parmesan cheese shavings.",
-        priceRating: affordable,
+      
         photo: images.California1,
         time: "3 - 4 min",
     },
     {
-        id: 19,
+        id: 'yyyyyyyyyyyyyyyeddd47889',
         name: "Pizza carbonara",
         rating: 4.8,
         categories: [5],
-        Top: true,
+      
         ingredients: [
             {
                 id: 1,
@@ -1424,13 +1446,14 @@ export const restaurantData = [
         description:
             "Tarte flambée is a thin, crispy, rectangular flatbread that is topped with tart and spreadable cheese (fromage blanc) or melting ripe cheese (Munster), créme fraîche, crispy bacon, and thinly sliced roasted onions.",
         people: "1-4",
-        price: "$ 4",
-        priceRating: affordable,
+        
+                price:4.6,
+
         photo: images.California2,
         time: "3 - 4 min",
     },
     {
-        id: 20,
+        id: 'qqqqqqqqqqqqqqqqq',
         name: "Pizza  padellino",
         rating: 4.8,
         categories: [6],
@@ -1467,22 +1490,23 @@ export const restaurantData = [
                 icon: images.basil,
             },
         ],
-        priceRating: affordable,
+      
         photo: images.Detroit,
         time: "2 - 4 min",
         size: "medium",
         people: "3-5",
-        price: "$ 6.6",
+              price:5.6,
+
         description:
             "As the name suggests, this Italian pizza variety is created to appeal to the vegetarian palate. Pizza vegetariana consists of a basic pizza dough that is smeared with tomato sauce and topped with mozzarella and a combination of fresh, seasonal vegetables, typically zucchini, eggplants, and peppers, which are almost always pre-cooked",
     },
     {
-        id: 21,
+        id: 'jjjjjjjjjj3333',
 
         name: "Pizza pesto",
         rating: 5.0,
         categories: [6],
-        priceRating: affordable,
+      
         ingredients: [
             {
                 id: 1,
@@ -1525,12 +1549,13 @@ export const restaurantData = [
         time: "2 - 4 min",
         size: "large",
         people: "6-7",
-        price: "$ 9.4",
+               price:6.3,
+
         description:
             "Of course, due to its popularity, it spread well beyond Alsace, so there are many varieties of the dish with added mushrooms or tomatoes. Tarte flambée pairs perfectly with dry white wines and foamy local beers, both of them specialties of the Alsace region.",
     },
     {
-        id: 22,
+        id: '1111111112222',
         name: "Pizza pesto",
         rating: 5.0,
         categories: [6],
@@ -1573,22 +1598,23 @@ export const restaurantData = [
                 icon: images.yeast,
             },
         ],
-        priceRating: affordable,
+      
         photo: images.Detroit2,
         time: "2 - 4 min",
         size: "medium",
         people: "3-5",
-        price: "$ 6.6",
+              price:5.6,
+
         description:
             "A pinch of salt, ground pepper, peanut oil and nutmeg add extra layers of flavor to this beloved snack. Also known as flammeküche in Germany, the flaming tart takes its name from the fact that it is baked at a close proximity to hot embers in a brick oven.",
     },
     {
-        id: 23,
+        id: '1223ssss454546',
         name: "Pizza e fichi",
         rating: 4.0,
         size: "small",
         people: "1-4",
-        price: "$ 4",
+        
         ingredients: [
             {
                 id: 1,
@@ -1638,7 +1664,9 @@ export const restaurantData = [
             },
         ],
         categories: [6],
-        priceRating: affordable,
+                price:4.6,
+
+      
         photo: images.Detroit3,
         time: "2 - 4 min",
         description:

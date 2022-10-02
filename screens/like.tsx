@@ -21,12 +21,26 @@ import {
   responsiveFontSize,
 } from "react-native-responsive-dimensions";
 import {FontAwesome} from "@expo/vector-icons";
+
 const Like = ({navigation}: any) => {
   const cartData2 = useSelector(state => state.cartData2);
   const dispatch = useDispatch();
   const deleteAll = () => {
     dispatch(deleteAllFromCart());
   };
+// total price
+  const [total, setTotal] = React.useState(0);
+  React.useEffect(() => {
+    let total = 0;
+    cartData2.forEach(item => {
+      total += item.price * item.quantity;
+    });
+    setTotal(total);
+  }, [cartData2]);
+console.log('====================================');
+console.log(total);
+console.log('====================================');
+
 
 
 

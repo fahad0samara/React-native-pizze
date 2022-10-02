@@ -46,6 +46,8 @@ export type info = {
   description: string;
 };
 
+
+
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> =
   CompositeScreenProps<
     BottomTabScreenProps<RootTabParamList, Screen>,
