@@ -4,17 +4,24 @@
     "slug": "pizz",
     "version": "1.0.0",
     "orientation": "portrait",
-
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
-   
-     
       "backgroundColor": "#ffffff"
     },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
+        }
+      ]
+    ],
+    
     "updates": {
       "fallbackToCacheTimeout": 0
     },
+    
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -23,7 +30,6 @@
     },
     "android": {
       "adaptiveIcon": {
-      
         "backgroundColor": "#ffffff"
       }
     },

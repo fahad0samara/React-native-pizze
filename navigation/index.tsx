@@ -22,6 +22,7 @@ import {
 import LinkingConfiguration from "./LinkingConfiguration";
 import Like from "../screens/Like";
 import Cart from "../screens/Cart";
+import Account from "../screens/Account";
 
 export default function Navigation({}: {}) {
   return (
@@ -104,7 +105,7 @@ const TabArr = [
     type: Icons.FontAwesome,
     activeIcon: "user-circle",
     inActiveIcon: "user-circle-o",
-    component: ModalScreen,
+    component: Account,
   },
 ];
 

@@ -8,7 +8,7 @@ import {
   FlatList,
 } from "react-native";
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {
   decreaseCartQuantity,
   deleteAllFromCart,
@@ -21,10 +21,10 @@ import {
   responsiveWidth,
   responsiveFontSize,
 } from "react-native-responsive-dimensions";
-import { FontAwesome } from "@expo/vector-icons";
-import { LinearGradient } from "expo-linear-gradient";
+import {FontAwesome} from "@expo/vector-icons";
+import {LinearGradient} from "expo-linear-gradient";
 
-const Cart = ({ navigation }: any) => {
+const Cart = ({navigation}: any) => {
   const dispatch = useDispatch();
   const cartData = useSelector(state => state.cartData);
   let cartItems = useSelector(store => store.cartData);
@@ -50,8 +50,8 @@ const Cart = ({ navigation }: any) => {
       dispatch(decreaseCartQuantity(id));
     }
   };
- 
-  const CartCard = ({ item }: any) => {
+
+  const CartCard = ({item}: any) => {
     return (
       <View
         key={item.id}
