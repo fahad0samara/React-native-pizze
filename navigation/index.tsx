@@ -23,6 +23,7 @@ import LinkingConfiguration from "./LinkingConfiguration";
 import Like from "../screens/Like";
 import Cart from "../screens/Cart";
 import Account from "../screens/Account";
+import ADD from "../screens/ADD";
 
 export default function Navigation({}: {}) {
   return (
@@ -37,6 +38,11 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 function RootNavigator() {
   return (
     <Stack.Navigator>
+      <Stack.Screen
+        name="ADD"
+        component={ADD}
+        options={{headerShown: false}}
+      />
       <Stack.Screen
         name="HomeScreen"
         component={HomeScreen}
