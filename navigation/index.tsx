@@ -21,9 +21,12 @@ import {
 } from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
 import Like from "../screens/Like";
-import Cart from "../screens/Cart";
+import Cart from "../screens/cart/Cart";
 import Account from "../screens/Account";
 import ADD from "../screens/ADD";
+import History from "../screens/portfolio/History";
+import LoadingCart from "../screens/cart/LoadingCart";
+import Payment from "../screens/cart/Payment";
 
 export default function Navigation({}: {}) {
   return (
@@ -38,11 +41,6 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 function RootNavigator() {
   return (
     <Stack.Navigator>
-      <Stack.Screen
-        name="ADD"
-        component={ADD}
-        options={{headerShown: false}}
-      />
       <Stack.Screen
         name="HomeScreen"
         component={HomeScreen}
@@ -72,6 +70,21 @@ function RootNavigator() {
         name="NotFound"
         component={NotFoundScreen}
         options={{title: "Oops!"}}
+      />
+      <Stack.Screen
+        name="History"
+        component={History}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="LoadingCart"
+        component={LoadingCart}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Payment"
+        component={Payment}
+        options={{headerShown: false}}
       />
       <Stack.Group screenOptions={{presentation: "formSheet"}}>
         <Stack.Screen name="Modal" component={ModalScreen} />

@@ -12,9 +12,8 @@ import {
   decreaseCartQuantity,
   deleteAllFromCart,
   increaseCartQuantity,
-  
   removeDataFromCart2,
-} from "../Redux/action";
+} from "../../Redux/action";
 import {
   responsiveHeight,
   responsiveWidth,
@@ -22,33 +21,29 @@ import {
 } from "react-native-responsive-dimensions";
 import {FontAwesome} from "@expo/vector-icons";
 
-const Like = ({ navigation }: any) => {
-  // typescript
-
-  const cartData2 = useSelector((state: any) => state.cartData2);
+const Like = ({navigation}: any) => {
+  const cartData2 = useSelector(state => state.cartData2);
   const dispatch = useDispatch();
-  // show the timestamp 
-  const showTime = (time: any) => {
-    const date = new Date(time);
-    return date.toLocaleString();
+  const deleteAll = id => {
+    dispatch(removeDataFromCart2(id));
   };
-// 
-  
-  
-
-   
-
-
+  // remove all data from cart
+  const removeData = (id: any) => {
+    dispatch(removeDataFromCart2(id));
+  };
 
   // total price
   const [total, setTotal] = React.useState(0);
   React.useEffect(() => {
     let total = 0;
-    cartData2.forEach((item: any) => {
+    cartData2.forEach(item => {
       total += item.price * item.quantity;
     });
     setTotal(total);
   }, [cartData2]);
+  console.log("====================================");
+  console.log(total);
+  console.log("====================================");
 
   return cartData2.length > 0 ? (
     <View
@@ -58,7 +53,7 @@ const Like = ({ navigation }: any) => {
       }}
     >
       <Image
-        source={require("../assets/images/Like.png")}
+        source={require("../../assets/images/Like.png")}
         style={{
           position: "absolute",
           right: -60,
@@ -123,12 +118,11 @@ const Like = ({ navigation }: any) => {
               <Image
                 source={item.photo}
                 style={{
-                  width: 120,
+                  width: 100,
 
-                  height: 130,
-                  borderBottomRightRadius: 20,
-                  borderTopRightRadius: 20,
-                  borderRadius: 20,
+                  height: 100,
+               
+                  borderRadius: 70,
                 }}
               />
               <View
@@ -146,71 +140,23 @@ const Like = ({ navigation }: any) => {
                 >
                   {item.name}
                 </Text>
+
                 {
-                  // show the timestamp
+                  // add the time here
                 }
+                
+                
+            
                 <Text
                   style={{
-                    color: "#fff",
+                    color: "#eab308",
+                    fontWeight: "bold",
                     fontSize: responsiveFontSize(2),
-                    marginLeft: 10,
                   }}
                 >
-                  {item.timestamp}
+                  {item.date}
                 </Text>
 
-                <View
-                  style={{
-                    marginTop: 20,
-
-                    flexDirection: "row",
-                  }}
-                >
-                  <TouchableOpacity
-                    style={{
-                      backgroundColor: "#eab308",
-                      width: "40%",
-                      padding: 5,
-                    }}
-                  >
-                    <Text
-                      style={{
-                        alignItems: "center",
-                        justifyContent: "center",
-                        marginLeft: 15,
-                        fontWeight: "bold",
-                        fontSize: responsiveFontSize(2.5),
-                        color: "#fff",
-                      }}
-                    >
-                      Buy Now
-                    </Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={{
-                      backgroundColor: "#fff",
-                      width: "40%",
-                      padding: 5,
-                      marginLeft: 7,
-                    }}
-                    onPress={() => {
-                      dispatch(removeDataFromCart2(item.id));
-                    }}
-                  >
-                    <Text
-                      style={{
-                        alignItems: "center",
-                        justifyContent: "center",
-                        marginLeft: 30,
-                        color: "#000",
-                        fontWeight: "bold",
-                        fontSize: responsiveFontSize(2.5),
-                      }}
-                    >
-                      Delete
-                    </Text>
-                  </TouchableOpacity>
-                </View>
               </View>
             </View>
           </>
@@ -234,7 +180,7 @@ const Like = ({ navigation }: any) => {
           marginLeft: 120,
           marginTop: 40,
         }}
-        source={require("../assets/images/Like0.png")}
+        source={require("../../assets/images/Like0.png")}
       />
       <Text
         style={{

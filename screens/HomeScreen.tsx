@@ -3,9 +3,9 @@ import {LinearGradient} from "expo-linear-gradient";
 import React from "react";
 
 import {
-  responsiveHeight,
-  responsiveWidth,
-  responsiveFontSize,
+   responsiveScreenHeight,
+   responsiveScreenWidth,
+  responsiveScreenFontSize,
 } from "react-native-responsive-dimensions";
 import { RootStackScreenProps } from '../types';
 
@@ -58,8 +58,8 @@ const HomeScreen = ({navigation}: RootStackScreenProps<"HomeScreen">) => {
 const styles = StyleSheet.create({
   background: {
     position: "absolute",
-    width: responsiveWidth(100),
-    height: responsiveHeight(100),
+    width:  responsiveScreenWidth(100),
+    height:  responsiveScreenHeight(100),
   },
 
   GettingStartedPage: {
@@ -72,24 +72,24 @@ const styles = StyleSheet.create({
     borderRadius: 22,
     backgroundColor: "white",
     /* url(https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/yrw3mljxp4l-2%3A4177?alt=media&token=24bc8f97-65d6-4a4a-bdad-c9c98ee5772f), linear-gradient(132.14deg, rgba(246,137,137,1) 0%, rgba(254,81,80,1) 100%, ) , linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)) */
-    width: responsiveWidth(4),
-    height: responsiveHeight(100),
+    width:  responsiveScreenWidth(4),
+    height:  responsiveScreenHeight(100),
   },
   DeliveryMan2: {
     position: "absolute",
     top: 0,
 
-    width: responsiveWidth(100),
-    height: responsiveHeight(70),
+    width:  responsiveScreenWidth(100),
+    height:  responsiveScreenHeight(70),
   },
   Group1082: {
     display: "flex",
     flexDirection: "column",
     position: "absolute",
-    top: responsiveHeight(70),
+    top:  responsiveScreenHeight(63),
 
-    width: responsiveWidth(100),
-    height: responsiveHeight(70),
+    width:  responsiveScreenWidth(100),
+    height:  responsiveScreenHeight(70),
     backgroundColor: "#000",
     borderRadius: 26,
   },
@@ -97,9 +97,9 @@ const styles = StyleSheet.create({
     fontFamily: "Roboto",
     fontStyle: "normal",
     fontWeight: "bold",
-    marginHorizontal: 50,
+    marginHorizontal:responsiveScreenWidth(13),
     marginTop: 20,
-    fontSize: responsiveFontSize(4.5),
+    fontSize: responsiveScreenFontSize(4.2),
 
     color: "rgba(255, 255, 255, 1)",
     letterSpacing: 0,
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     fontStyle: "normal",
     fontWeight: "bold",
 
-    fontSize: responsiveFontSize(4.5),
+    fontSize: responsiveScreenFontSize(4.5),
     color: "#fff",
     letterSpacing: 0,
   },
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     fontStyle: "normal",
     fontWeight: "bold",
 
-    fontSize: responsiveFontSize(4.5),
+    fontSize: responsiveScreenFontSize(4.5),
     color: "#eab308",
     letterSpacing: 0,
   },
@@ -131,8 +131,8 @@ const styles = StyleSheet.create({
   },
   Button: {
     display: "flex",
-    width: responsiveWidth(100),
-    height: responsiveHeight(8),
+    width:  responsiveScreenWidth(100),
+    height:  responsiveScreenHeight(8),
 
     backgroundColor: "#eab308",
     borderRadius: 34,

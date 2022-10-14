@@ -46,7 +46,13 @@ const oregano = require("../assets/images/oregano.png");
 const salt = require("../assets/images/salt.png");
 const olive = require("../assets/images/olive.png");
 const yeast = require("../assets/images/yeast.png");
-
+const chef1 = require("../assets/images/Chef1.jpg");
+const chef2 = require("../assets/images/Chef2.jpg");
+const chef3 = require("../assets/images/Chef3.jpg");
+const chef4 = require("../assets/images/Chef4.jpg");
+const chef5 = require("../assets/images/Chef5.jpg");
+const chef6 = require("../assets/images/Chef6.jpg");
+const chef7 = require("../assets/images/Chef7.jpg");
 export default {
   neapolitan,
   neapolitan1,
@@ -93,7 +99,14 @@ export default {
   tomato, oregano,
   salt,
   olive,
-  yeast
-
+  yeast,
+  chef1,
+  chef2,
+  chef3,
+  chef4,
+  chef5
+  ,
+  chef6,
+  chef7,
 
 };

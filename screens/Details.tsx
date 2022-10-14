@@ -32,25 +32,51 @@ const LineDivider = () => {
   );
 };
 
-const ItemDetail = ({route, navigation}: any) => {
+const ItemDetail = ({ route, navigation }: any) => {
+  // add the timestamp to the cart
+
+
   let cartItems2 = useSelector(store => store.cartData2);
   let {item} = route.params;
   const [scrollViewWholeHeight, setScrollViewWholeHeight] = React.useState(4);
   const [scrollViewVisibleHeight, setScrollViewVisibleHeight] =
     React.useState(0);
-  const [products, setProducts] = useState([]);
+  //    timestamp
+
+  // add the time when the user clicks on the item
+  const [timestamp, setTimestamp] = useState(new Date().getTime());
+
+    
+  // format the time
+  const date = new Date(timestamp);
+  const formattedDate = date.toLocaleDateString("en-US", {
+    hour: "numeric",
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+
+
+  
+
+
+  console.log("formattedDate", formattedDate);
+
   const dispatch = useDispatch();
+
   const [loading, setLoading] = useState(true);
 
-  let cartItems = useSelector(store => store.cartData);
-  const handleCart = item => {
+  let cartItems = useSelector((store: any) => store.cartData);
+  const handleCart = (item: any) => {
     const {id} = item;
     let newItem = {...item};
 
     let find = cartItems.find(item => item.id === id);
+
     if (!find) {
       newItem.quantity = 1;
       dispatch(addToCart(newItem));
+      dispatch(addToCart2(newItem));
     } else {
       dispatch(increaseCartQuantity(id));
     }

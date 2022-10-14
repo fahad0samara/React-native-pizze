@@ -1,8 +1,51 @@
 import { images } from "../constants";
 // price rating
-const affordable = 1;
-const fairPrice = 2;
-const expensive = 3;
+
+export const chef = [
+    {
+        id: 1,
+        name: "Grant Achatz",
+        rating: 4.8,
+        photo: images.chef1,
+    },
+        {
+        id: 2,
+            name: "Ferran Adrià",
+        rating: 4.7,
+        photo: images.chef2,
+    },
+        {
+        id: 3,
+            name: "Nicolas Appert",
+        rating: 4.6,
+        photo: images.chef3,
+    },
+        {
+        id: 4,
+            name: "Mario Batali",
+        rating: 4.5,
+        photo: images.chef4,
+    },
+        {
+        id: 5,
+            name: "James Beard.",
+        rating: 4.4,
+        photo: images.chef5,
+    },
+        {
+        id: 6,
+            name: "Paul Bocuse",
+        rating: 4.3,
+        photo: images.chef6,
+    },
+        {
+        id: 7,
+            name: "Anthony Bourdain",
+        rating: 4.2,
+        photo: images.chef7,
+    },
+   
+]
 export const TopPizza = [
     {
         id: 1,
