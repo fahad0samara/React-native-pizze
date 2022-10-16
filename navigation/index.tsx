@@ -19,14 +19,15 @@ import {
   RootTabParamList,
   RootTabScreenProps,
 } from "../types";
-import LinkingConfiguration from "./LinkingConfiguration";
+
 import Like from "../screens/Like";
 import Cart from "../screens/cart/Cart";
 import Account from "../screens/Account";
-import ADD from "../screens/ADD";
+
 import History from "../screens/portfolio/History";
 import LoadingCart from "../screens/cart/LoadingCart";
 import Payment from "../screens/cart/Payment";
+import LoadingPayment from "../screens/cart/LoadingPayment";
 
 export default function Navigation({}: {}) {
   return (
@@ -84,6 +85,11 @@ function RootNavigator() {
       <Stack.Screen
         name="Payment"
         component={Payment}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="LoadingPayment"
+        component={LoadingPayment}
         options={{headerShown: false}}
       />
       <Stack.Group screenOptions={{presentation: "formSheet"}}>

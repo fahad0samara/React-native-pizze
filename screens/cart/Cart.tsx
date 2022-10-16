@@ -67,6 +67,15 @@ const Cart = ({navigation}: any) => {
     (quantity, item) => item.quantity + quantity,
     0
   );
+  // add  total price and the cartdata to anther secreen
+  const handlePayment = () => {
+    navigation.navigate("LoadingCart", {
+      total: total,
+      cartData: cartData,
+    });
+  };
+    
+  
 
   const decreaseQuantity = (id: any) => {
     if (cartItems.find((item: any) => item.id === id).quantity === 1) {
@@ -538,9 +547,7 @@ const Cart = ({navigation}: any) => {
                 justifyContent: "center",
                 alignItems: "center",
               }}
-              onPress={() => {
-                navigation.replace("LoadingCart");
-              }}
+              onPress={handlePayment}
             >
               <FontAwesome name="check" size={24} color="#fff" />
             </TouchableOpacity>
@@ -595,9 +602,7 @@ const Cart = ({navigation}: any) => {
                 justifyContent: "center",
                 alignItems: "center",
               }}
-              onPress={() => {
-                navigation.replace("LoadingCart");
-              }}
+              onPress={handlePayment}
             >
               <FontAwesome name="check" size={24} color="#fff" />
             </TouchableOpacity>
@@ -648,16 +653,7 @@ const Cart = ({navigation}: any) => {
                 justifyContent: "center",
                 alignItems: "center",
               }}
-              onPress={() => {
-              
-                navigation.replace("LoadingCart", {
-                  total: total,
-                 
-
-                
-
-                });
-              }}
+              onPress={handlePayment}
             >
               <FontAwesome name="check" size={24} color="#fff" />
             </TouchableOpacity>
