@@ -14,12 +14,13 @@ import {
   responsiveFontSize,
 } from "react-native-responsive-dimensions";
 import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view";
+import {useSelector} from "react-redux";
 
-const Payment = ({ route, navigation }: any) => {
+const Payment = ({ navigation}: any) => {
   // get the data from route
-  const { total, cartData } = route.params;
+
   const [cardNumber, setCardNumber] = React.useState("");
-  const [cardHolder, setCardHolder] = React.useState("");
+
   const [cardSucceed, setCardSucceed] = React.useState(false);
 
   const [cardNumberError, setCardNumberError] = React.useState(false);
@@ -33,6 +34,7 @@ const Payment = ({ route, navigation }: any) => {
   const [cvv, setCVV] = React.useState("");
   const [cvvError, setCvvError] = React.useState(false);
   const [cvvSucceed, setCvvSucceed] = React.useState(false);
+  //@ts-ignore
 
   return (
     <SafeAreaView
@@ -448,10 +450,7 @@ const Payment = ({ route, navigation }: any) => {
           ) : (
             <TouchableOpacity
               onPress={() => {
-                  navigation.navigate("LoadingPayment", {
-                    total: total,
-                    cartData: cartData,
-                  });
+                navigation.navigate("LoadingPayment", {});
               }}
               style={{
                 width: responsiveWidth(90),

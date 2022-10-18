@@ -12,7 +12,7 @@ import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import HomeScreen from "../screens/HomeScreen";
 import ModalScreen from "../screens/ModalScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
-import TabOneScreen from "../screens/TabOneScreen";
+import Home from "../screens/Home";
 import TabTwoScreen from "../screens/TabTwoScreen";
 import {
   RootStackParamList,
@@ -24,10 +24,11 @@ import Like from "../screens/Like";
 import Cart from "../screens/cart/Cart";
 import Account from "../screens/Account";
 
-import History from "../screens/portfolio/History";
+
 import LoadingCart from "../screens/cart/LoadingCart";
 import Payment from "../screens/cart/Payment";
 import LoadingPayment from "../screens/cart/LoadingPayment";
+import Sing from "../screens/auth/Sing";
 
 export default function Navigation({}: {}) {
   return (
@@ -42,6 +43,17 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 function RootNavigator() {
   return (
     <Stack.Navigator>
+      {
+        // set this screen to be the first screen
+      }
+      <Stack.Screen
+        initialRouteName
+        name="Sing"
+        component={Sing}
+        options={{
+          headerShown: false,
+        }}
+      />
       <Stack.Screen
         name="HomeScreen"
         component={HomeScreen}
@@ -72,11 +84,7 @@ function RootNavigator() {
         component={NotFoundScreen}
         options={{title: "Oops!"}}
       />
-      <Stack.Screen
-        name="History"
-        component={History}
-        options={{headerShown: false}}
-      />
+
       <Stack.Screen
         name="LoadingCart"
         component={LoadingCart}
@@ -106,7 +114,7 @@ const TabArr = [
     type: Icons.Ionicons,
     activeIcon: "grid",
     inActiveIcon: "grid-outline",
-    component: TabOneScreen,
+    component: Home,
   },
   {
     route: "Like",

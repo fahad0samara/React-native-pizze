@@ -3,7 +3,6 @@ import {
   Text,
   Image,
   TouchableOpacity,
-  ScrollView,
   StyleSheet,
   FlatList,
   Linking,
@@ -12,10 +11,10 @@ import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {
   decreaseCartQuantity,
-  deleteAllFromCart,
   increaseCartQuantity,
   removeDataFromCart,
-  TOTAL_PRICE,
+  addToCart3,
+  deleteAllFromCart,
 } from "../../Redux/action";
 import {
   responsiveHeight,
@@ -28,54 +27,61 @@ import {LinearGradient} from "expo-linear-gradient";
 import {BottomSheetModal, BottomSheetModalProvider} from "@gorhom/bottom-sheet";
 import {useEffect, useRef, useState} from "react";
 import {GestureHandlerRootView, TextInput} from "react-native-gesture-handler";
-import Checkbox from "expo-checkbox";
 
 const Cart = ({navigation}: any) => {
-
- 
-  // set border for card
-  const [isChecked, setChecked] = useState(false);
   const [isChecked1, setChecked1] = useState(false);
-   const [isChecked2, setChecked2] = useState(false);
+  const [isChecked2, setChecked2] = useState(false);
   const [isChecked3, setChecked3] = useState(false);
- 
+
   const [isOpen2, setIsOpen2] = useState(false);
 
   const bottomSheetModalRef = useRef(null);
 
+  const snapPoints2 = [
+    responsiveScreenHeight(30),
+    responsiveScreenHeight(54),
+    responsiveScreenHeight(90),
+  ];
 
-  const snapPoints2 = [responsiveScreenHeight(30),responsiveScreenHeight(54), responsiveScreenHeight(90)];
+  // type script
 
   function handlePresentModal() {
+    //@ts-ignore
     bottomSheetModalRef.current?.present();
     setTimeout(() => {
       setIsOpen2(true);
     }, 100);
   }
   const dispatch = useDispatch();
-  const cartData = useSelector(state => state.cartData);
-  let cartItems = useSelector(store => store.cartData);
+  const cartData = useSelector(
+    (state): any =>
+      //@ts-ignore
+      state.cartData
+  );
 
+  let cartItems = useSelector((store): any => {
+    //@ts-ignore
+    return store.cartData;
+  });
 
   // this function is use to get the total price of the cart
-  const total = cartItems.reduce((total, cartItem) => {
-    const item = cartItems.find(i => i.id === cartItem.id);
-    return total + (item?.price || 0) * cartItem.quantity;
-  }, 0);
-
-  const cartQuantity = cartItems.reduce(
-    (quantity, item) => item.quantity + quantity,
+  const total = cartItems.reduce(
+    (total: number, cartItem: {id: any; quantity: number}): any => {
+      const item = cartItems.find(
+        (i: {id: any}): boolean => i.id === cartItem.id
+      );
+      return total + (item?.price || 0) * cartItem.quantity;
+    },
     0
   );
-  // add  total price and the cartdata to anther secreen
-  const handlePayment = () => {
-    navigation.navigate("LoadingCart", {
-      total: total,
-      cartData: cartData,
-    });
+
+  const handleCart = () => {
+    // reset the cart after the payment is done
+    dispatch(deleteAllFromCart());
+    dispatch(addToCart3(cartItems));
+    // don't allowed the user to go back to the cart screen
+    navigation.replace("LoadingCart");
   };
-    
-  
 
   const decreaseQuantity = (id: any) => {
     if (cartItems.find((item: any) => item.id === id).quantity === 1) {
@@ -91,7 +97,6 @@ const Cart = ({navigation}: any) => {
         key={item.id}
         style={{
           flexDirection: "row",
-
           alignItems: "center",
           justifyContent: "space-between",
           marginHorizontal: 20,
@@ -352,6 +357,8 @@ const Cart = ({navigation}: any) => {
                 backgroundColor: "#000",
                 flex: 1,
 
+                alignItems: "center",
+
                 justifyContent: "center",
               }}
             >
@@ -359,10 +366,10 @@ const Cart = ({navigation}: any) => {
                 style={{
                   width: responsiveWidth(40),
                   height: responsiveHeight(20),
-                  marginLeft: 120,
+
                   marginTop: 40,
                 }}
-                source={require("../../assets/images/Like0.png")}
+                source={require("../../assets/images/pizaaHome.png")}
               />
               <Text
                 style={{
@@ -370,21 +377,19 @@ const Cart = ({navigation}: any) => {
                   justifyContent: "center",
                   marginVertical: 5,
                   fontWeight: "bold",
-                  marginHorizontal: 35,
 
-                  fontSize: responsiveFontSize(4),
+                  fontSize: responsiveFontSize(3.5),
                   color: "#fff",
                   marginTop: 20,
                 }}
               >
-                You do not have pizza,
+                your card is empty
               </Text>
               <Text
                 style={{
                   alignItems: "center",
                   justifyContent: "center",
 
-                  marginLeft: 75,
                   fontWeight: "bold",
                   fontSize: responsiveFontSize(3.5),
                   color: "#fff",
@@ -399,7 +404,6 @@ const Cart = ({navigation}: any) => {
                   width: "60%",
                   borderRadius: 10,
                   marginVertical: 20,
-                  marginLeft: 80,
                 }}
                 onPress={() => {
                   navigation.navigate("Home");
@@ -470,6 +474,7 @@ const Cart = ({navigation}: any) => {
               }}
               onPress={() => {
                 setIsOpen2(false);
+                //@ts-ignore
                 bottomSheetModalRef.current?.close();
               }}
             >
@@ -547,7 +552,10 @@ const Cart = ({navigation}: any) => {
                 justifyContent: "center",
                 alignItems: "center",
               }}
-              onPress={handlePayment}
+              // handleCart
+              onPress={() => {
+                handleCart();
+              }}
             >
               <FontAwesome name="check" size={24} color="#fff" />
             </TouchableOpacity>
@@ -602,7 +610,12 @@ const Cart = ({navigation}: any) => {
                 justifyContent: "center",
                 alignItems: "center",
               }}
-              onPress={handlePayment}
+              // send the user to apple pay when the user click on the button
+              // Linking.openURL is used to open the apple pay
+
+              onPress={() => {
+                Linking.openURL("https://www.apple.com/apple-pay/");
+              }}
             >
               <FontAwesome name="check" size={24} color="#fff" />
             </TouchableOpacity>
@@ -645,6 +658,11 @@ const Cart = ({navigation}: any) => {
               google pay
             </Text>
             <TouchableOpacity
+              // send the user to apple pay when the user click on the button
+              // Linking.openURL is used to open the google pay
+              onPress={() => {
+                Linking.openURL("https://pay.google.com/intl/en_us/about/");
+              }}
               style={{
                 backgroundColor: "#eab308",
                 width: 30,
@@ -653,13 +671,17 @@ const Cart = ({navigation}: any) => {
                 justifyContent: "center",
                 alignItems: "center",
               }}
-              onPress={handlePayment}
             >
               <FontAwesome name="check" size={24} color="#fff" />
             </TouchableOpacity>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => navigation.replace("LoadingCart")}
+            // send the user to apple pay when the user click on the button
+            // Linking.openURL is used to open the google pay
+
+            onPress={() => {
+              Linking.openURL("https://pay.google.com/intl/en_us/about/");
+            }}
             style={{
               flexDirection: "row",
 
@@ -706,7 +728,7 @@ const Cart = ({navigation}: any) => {
                 alignItems: "center",
               }}
               onPress={() => {
-                navigation.replace("LoadingCart");
+                navigation.replace("LoadingPayment");
               }}
             >
               <FontAwesome name="check" size={24} color="#fff" />

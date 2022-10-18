@@ -27,6 +27,7 @@ export default function ADD() {
   const snapPoints = ["25%", "48%", "80%"];
 
   function handlePresentModal() {
+    //@ts-ignore
     bottomSheetModalRef.current?.present();
     setTimeout(() => {
       setIsOpen(true);

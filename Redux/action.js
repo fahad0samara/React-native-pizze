@@ -1,11 +1,13 @@
 export const ALL_PRODUCTS = "ALL_PRODUCTS";
 export const CART_PRODUCTS = "CART_PRODUCTS";
 export const CART_PRODUCTS2 = "CART_PRODUCTS2";
-export const card_history = 'card_history';
+export const CART_PRODUCTS3 = "CART_PRODUCTS3";
+
 export const REMOVE_DATA_FROM_CART = 'REMOVE_DATA_FROM_CART';
 export const INCREASE_CART_QUANTITY = 'INCREASE_CART_QUANTITY';
 export const DECREASE_CART_QUANTITY = 'DECREASE_CART_QUANTITY';
 export const REMOVE_ALL_FROM_CART = 'REMOVE_ALL_FROM_CART';
+export const REMOVE_ALL_From_HISTORY = 'REMOVE_ALL_From_HISTORY';
 export const REMOVE_DATA_FROM_CART2 = 'REMOVE_DATA_FROM_CART2';
 export const TOTAL_PRICE = 'TOTAL_PRICE';
 
@@ -35,10 +37,12 @@ export const addToCart2 = (data) => ({
     payload: data
 });
 // add to history
-export const addToHistory = (data) => ({
-    type: card_history,
+// add item to history list when the user fishe the chekout
+export const addToCart3 = (data) => ({
+    type: CART_PRODUCTS2,
     payload: data
 });
+
 
 
 //* increase quantity
@@ -73,5 +77,10 @@ export const removeDataFromCart2 = (id) => ({
 export const deleteAllFromCart = () => ({
     type: REMOVE_ALL_FROM_CART,
 });
+//* remove All from history
+export const deleteAllFromCartHistory = () => ({
+    type:REMOVE_ALL_From_HISTORY
+});
+
 
 

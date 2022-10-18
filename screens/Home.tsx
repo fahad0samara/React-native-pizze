@@ -32,7 +32,7 @@ import New from "./New/New";
 import RenderFirstCard from "../components/RenderFirstCard";
 import RenderTop from "../components/RenderTop";
 
-export default function TabOneScreen({
+export default function Home({
   navigation,
 }: RootTabScreenProps<"TabOne">) {
   const [Hours, setHours] = React.useState("");

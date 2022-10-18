@@ -1,14 +1,5 @@
 import "react-native-gesture-handler";
-import {StatusBar} from "expo-status-bar";
-import {
-  
-  Pressable,
-  StyleSheet,
-  Switch,
 
-  useWindowDimensions,
-
-} from "react-native";
 import {BottomSheetModal, BottomSheetModalProvider} from "@gorhom/bottom-sheet";
 import {useEffect, useRef, useState} from "react";
 
@@ -17,26 +8,23 @@ import {
   View,
   Text,
   Image,
-  Button,
+  StyleSheet,
   ImageBackground,
   TouchableOpacity,
   ActivityIndicator,
   FlatList,
-  Linking
+  Linking,
 } from "react-native";
 import {chef} from "../Data/RestaurantData";
 import * as ImagePicker from "expo-image-picker";
 import {FontAwesome} from "@expo/vector-icons";
 
 import {
-
   responsiveWidth,
   responsiveScreenHeight,
   responsiveFontSize,
 } from "react-native-responsive-dimensions";
-export default function ADD({
-  navigation,
-}:any) {
+export default function ADD({navigation}: any) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -47,22 +35,17 @@ export default function ADD({
   const sendEmail = () => {
     Linking.openURL(
       `mailto:${email}?subject=Hello&body=Hello ${name} your password is ${password}`
-
     );
   };
-  //    sendEmail
 
 
-
-// fatch 
+  // fatch
   useEffect(() => {
     setLoadingChef(true);
     setTimeout(() => {
       setLoadingChef(false);
-     
     }, 2000);
   }, []);
-
 
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
@@ -73,23 +56,23 @@ export default function ADD({
   // responsiveWidth,
 
   const snapPoints = [responsiveScreenHeight(50), responsiveScreenHeight(90)];
-  
+
   const snapPoints2 = [responsiveScreenHeight(50), responsiveScreenHeight(88)];
 
   function handlePresentModal() {
+    //@ts-ignore
     bottomSheetModalRef.current?.present();
     setTimeout(() => {
       setIsOpen(true);
     }, 100);
   }
-    function handlePresentModal2() {
+  function handlePresentModal2() {
+    //@ts-ignore
     bottomSheetModalRef2.current?.present();
     setTimeout(() => {
       setIsOpen2(true);
     }, 100);
   }
-
-
 
   const [promise, setpromise] = useState<any>(null); //  this is the state that will hold the promise
 
@@ -194,25 +177,13 @@ export default function ADD({
                           borderColor: "#eab308",
                         }}
                       />
+
                       <FontAwesome
                         name="camera"
                         size={24}
                         color="white"
-                        style={{position: "absolute", top: 50, left: 50}}
+                        style={{position: "absolute", top: 50, left: 60}}
                       />
-
-                      <Text
-                        style={{
-                          color: "white",
-                          fontSize: 20,
-                          fontWeight: "bold",
-                          position: "absolute",
-                          top: 50,
-                          left: 80,
-                        }}
-                      >
-                        Add Photo
-                      </Text>
                     </TouchableOpacity>
                   ) : //set the loaded image
                   loading ? (
@@ -268,7 +239,7 @@ export default function ADD({
                           fontWeight: "bold",
                         }}
                       >
-                        fahad al samara
+                        user name form data
                       </Text>
                     </View>
 
@@ -309,49 +280,7 @@ export default function ADD({
                         color="#eab308"
                       />
                     </View>
-                    {
-                      // history of orders
-                    }
-                    <View
-                
-                      
-                      style={{
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                        marginTop: 40,
 
-                        alignItems: "center",
-                      }}
-                    >
-                      <TouchableOpacity
-                        onPress={
-                          () => navigation.navigate("History")
-                        }
-                        
-                        style={{
-                          flexDirection: "row",
-                          alignItems: "center",
-                          justifyContent: "center",
-                        }}
-                      >
-                        <FontAwesome name="history" size={24} color="#eab308" />
-                        <Text
-                          style={{
-                            fontSize: responsiveFontSize(2),
-                            color: "#fff",
-                            fontWeight: "bold",
-                            marginLeft: 10,
-                          }}
-                        >
-                          History of orders
-                        </Text>
-                      </TouchableOpacity>
-                      <FontAwesome
-                        name="angle-right"
-                        size={24}
-                        color="#eab308"
-                      />
-                    </View>
                     {
                       // about us
                     }
@@ -591,6 +520,7 @@ export default function ADD({
               }}
               onPress={() => {
                 setIsOpen2(false);
+                //@ts-ignore
                 bottomSheetModalRef2.current?.close();
               }}
             >
@@ -648,19 +578,29 @@ export default function ADD({
             }}
           >
             <TextInput
+              // don't allows user enter  more than 10 characters
+              onChangeText={text => {
+                if (text.trimStart().length != text.length) {
+                  setEmail(text);
+                }
+              }}
+              value={email}
               style={{
                 width: "80%",
-                height: responsiveScreenHeight(5),
+                height: 40,
                 backgroundColor: "#fff",
                 borderRadius: 10,
-                paddingHorizontal: 10,
+                paddingLeft: 10,
+                fontSize: responsiveFontSize(2),
               }}
               placeholder="Email"
               placeholderTextColor="#000"
-              value={email}
-              onChangeText={text => setEmail(text)}
             />
           </View>
+          {
+            // subject
+          }
+
           {
             // message
           }
@@ -995,6 +935,7 @@ export default function ADD({
               }}
               onPress={() => {
                 setIsOpen(false);
+                //@ts-ignore
                 bottomSheetModalRef.current?.close();
               }}
             >
@@ -1146,6 +1087,7 @@ export default function ADD({
                     </View>
                   )
                 }
+                //@ts-ignore
                 keyExtractor={
                   item => item.id
                   // item.id

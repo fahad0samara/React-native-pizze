@@ -36,7 +36,11 @@ const ItemDetail = ({ route, navigation }: any) => {
   // add the timestamp to the cart
 
 
-  let cartItems2 = useSelector(store => store.cartData2);
+  let cartItems2 = useSelector(
+    store =>
+      //@ts-ignore
+      store.cartData2
+  );
   let {item} = route.params;
   const [scrollViewWholeHeight, setScrollViewWholeHeight] = React.useState(4);
   const [scrollViewVisibleHeight, setScrollViewVisibleHeight] =
@@ -67,22 +71,24 @@ const ItemDetail = ({ route, navigation }: any) => {
   const [loading, setLoading] = useState(true);
 
   let cartItems = useSelector((store: any) => store.cartData);
+
+
+    // add to cart order 
   const handleCart = (item: any) => {
     const {id} = item;
     let newItem = {...item};
-
+    //@ts-ignore
     let find = cartItems.find(item => item.id === id);
 
     if (!find) {
       newItem.quantity = 1;
       dispatch(addToCart(newItem));
-      dispatch(addToCart2(newItem));
     } else {
       dispatch(increaseCartQuantity(id));
     }
   };
 
-  // add to order
+  // add to like list
   const AddTOcart = () => {
     let itemIndex = cartItems2.findIndex((cartItems2: any) => {
       return cartItems2.id === item.id;

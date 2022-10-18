@@ -12,7 +12,6 @@ import {
   decreaseCartQuantity,
   deleteAllFromCart,
   increaseCartQuantity,
-  
   removeDataFromCart2,
 } from "../Redux/action";
 import {
@@ -22,23 +21,17 @@ import {
 } from "react-native-responsive-dimensions";
 import {FontAwesome} from "@expo/vector-icons";
 
-const Like = ({ navigation }: any) => {
+const Like = ({navigation}: any) => {
   // typescript
 
   const cartData2 = useSelector((state: any) => state.cartData2);
   const dispatch = useDispatch();
-  // show the timestamp 
+  // show the timestamp
   const showTime = (time: any) => {
     const date = new Date(time);
     return date.toLocaleString();
   };
-// 
-  
-  
-
-   
-
-
+  //
 
   // total price
   const [total, setTotal] = React.useState(0);
@@ -149,19 +142,11 @@ const Like = ({ navigation }: any) => {
                 {
                   // show the timestamp
                 }
-                <Text
-                  style={{
-                    color: "#fff",
-                    fontSize: responsiveFontSize(2),
-                    marginLeft: 10,
-                  }}
-                >
-                  {item.timestamp}
-                </Text>
+          
 
                 <View
                   style={{
-                    marginTop: 20,
+                    marginTop: 15,
 
                     flexDirection: "row",
                   }}
@@ -170,7 +155,7 @@ const Like = ({ navigation }: any) => {
                     style={{
                       backgroundColor: "#eab308",
                       width: "40%",
-                      padding: 5,
+                      padding: 4,
                     }}
                   >
                     <Text
@@ -179,7 +164,7 @@ const Like = ({ navigation }: any) => {
                         justifyContent: "center",
                         marginLeft: 15,
                         fontWeight: "bold",
-                        fontSize: responsiveFontSize(2.5),
+                        fontSize: responsiveFontSize(2.3),
                         color: "#fff",
                       }}
                     >
@@ -191,7 +176,7 @@ const Like = ({ navigation }: any) => {
                       backgroundColor: "#fff",
                       width: "40%",
                       padding: 5,
-                      marginLeft: 7,
+                      marginLeft: 3,
                     }}
                     onPress={() => {
                       dispatch(removeDataFromCart2(item.id));
@@ -204,7 +189,7 @@ const Like = ({ navigation }: any) => {
                         marginLeft: 30,
                         color: "#000",
                         fontWeight: "bold",
-                        fontSize: responsiveFontSize(2.5),
+                        fontSize: responsiveFontSize(2.3),
                       }}
                     >
                       Delete
@@ -223,6 +208,7 @@ const Like = ({ navigation }: any) => {
       style={{
         backgroundColor: "#000",
         flex: 1,
+        alignItems: "center",
 
         justifyContent: "center",
       }}
@@ -231,7 +217,6 @@ const Like = ({ navigation }: any) => {
         style={{
           width: responsiveWidth(40),
           height: responsiveHeight(20),
-          marginLeft: 120,
           marginTop: 40,
         }}
         source={require("../assets/images/Like0.png")}
@@ -242,27 +227,27 @@ const Like = ({ navigation }: any) => {
           justifyContent: "center",
           marginVertical: 5,
           fontWeight: "bold",
-          marginHorizontal: 35,
+          
 
           fontSize: responsiveFontSize(4),
           color: "#fff",
           marginTop: 20,
         }}
       >
-        You do not have pizza,
+        You do not have any 
       </Text>
       <Text
         style={{
           alignItems: "center",
           justifyContent: "center",
 
-          marginLeft: 75,
+        
           fontWeight: "bold",
           fontSize: responsiveFontSize(3.5),
           color: "#fff",
         }}
       >
-        add a pizza to the list
+        favorite items
       </Text>
       <TouchableOpacity
         style={{
@@ -271,7 +256,7 @@ const Like = ({ navigation }: any) => {
           width: "60%",
           borderRadius: 10,
           marginVertical: 20,
-          marginLeft: 80,
+        
         }}
         onPress={() => {
           navigation.navigate("Home");

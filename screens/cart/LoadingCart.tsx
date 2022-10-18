@@ -1,11 +1,12 @@
 import { View, Text } from 'react-native'
 import React, { useEffect } from 'react'
 import CircularProgress from "react-native-circular-progress-indicator";
+import { useSelector } from 'react-redux';
 
 
 const LoadingCart = ({navigation, route}:any) => {
-  const {total,cartData} = route.params;
-  
+    
+
 
   // useEf
   useEffect(() => {
@@ -15,8 +16,7 @@ const LoadingCart = ({navigation, route}:any) => {
     setTimeout(() => {
       // and don't allowed to go back to the loading screen
       navigation.replace("Payment", {
-        total: total,
-        cartData: cartData,
+   
       });
     }, 1000);
   }, []);

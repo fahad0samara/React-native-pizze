@@ -45,7 +45,7 @@ const HomeScreen = ({navigation}: RootStackScreenProps<"HomeScreen">) => {
         </Text>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate("Root");
+            navigation.replace("Root");
           }}
           style={styles.Button}
         >
