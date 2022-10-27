@@ -86,6 +86,14 @@ const Like = ({navigation}: any) => {
           <FontAwesome name="angle-left" size={24} color="white" />
           <Text
             style={{
+              shadowColor: "#fff",
+              shadowOffset: {
+                width: 4,
+                height: 2,
+              },
+
+              shadowRadius: 9,
+              elevation: 10,
               color: "#eab308",
               fontSize: responsiveFontSize(4),
               fontWeight: "bold",
@@ -142,7 +150,6 @@ const Like = ({navigation}: any) => {
                 {
                   // show the timestamp
                 }
-          
 
                 <View
                   style={{
@@ -153,6 +160,8 @@ const Like = ({navigation}: any) => {
                 >
                   <TouchableOpacity
                     style={{
+                      // shadow
+
                       backgroundColor: "#eab308",
                       width: "40%",
                       padding: 4,
@@ -160,6 +169,12 @@ const Like = ({navigation}: any) => {
                   >
                     <Text
                       style={{
+                        // shadow
+                        textShadowColor: "rgba(0, 0, 0, 0.25)",
+                        textShadowOffset: {width: 7, height: 4},
+                        textShadowRadius: 9,
+                        // shadow
+
                         alignItems: "center",
                         justifyContent: "center",
                         marginLeft: 15,
@@ -227,21 +242,19 @@ const Like = ({navigation}: any) => {
           justifyContent: "center",
           marginVertical: 5,
           fontWeight: "bold",
-          
 
           fontSize: responsiveFontSize(4),
           color: "#fff",
           marginTop: 20,
         }}
       >
-        You do not have any 
+        You do not have any
       </Text>
       <Text
         style={{
           alignItems: "center",
           justifyContent: "center",
 
-        
           fontWeight: "bold",
           fontSize: responsiveFontSize(3.5),
           color: "#fff",
@@ -256,7 +269,6 @@ const Like = ({navigation}: any) => {
           width: "60%",
           borderRadius: 10,
           marginVertical: 20,
-        
         }}
         onPress={() => {
           navigation.navigate("Home");

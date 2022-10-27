@@ -1,5 +1,5 @@
 import React from "react";
-import {auth} from "../../firebase/Firebase";
+import {auth,db} from "../../firebase/Firebase";
 import {
   StyleSheet,
   Dimensions,
@@ -15,93 +15,70 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
 } from "firebase/auth";
-
+import "firebase/auth";
 import * as Animatable from "react-native-animatable";
-
+import "firebase/firestore";
 import {FontAwesome} from "@expo/vector-icons";
+import {doc, Firestore, getDoc, getFirestore, setDoc, } from "firebase/firestore";
+import {getAuth} from "firebase/auth";
 
 const Sing = ({navigation}: any) => {
   const [email, setemail] = React.useState("");
-  const [displayName, setdisplayName] = React.useState("");
+  const [name, setname] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [error, setError] = React.useState("");
   const [isValidEmail, setIsValidEmail] = React.useState(false);
   const [PhoneNumber, setPhoneNumber] = React.useState("");
   const [loading, setLoading] = React.useState(false);
-  const [user, setUser] = React.useState(null);
   const [isValidUserName, setisValidUserName] = React.useState(false);
-  const [isValidPhoneNumber, setisValidPhoneNumber] = React.useState(false);
-  const [secureTextEntry, setsecureTextEntry] = React.useState(false);
 
-  const handleSignUp = () => {
-    // sing up with email and password and display name and user name
+const [secureTextEntry, setsecureTextEntry] = React.useState(false);
+const auth = getAuth();
+  const handleSignUp = async () => {
     setLoading(true);
-    createUserWithEmailAndPassword(auth, email, password)
-        .then(userCredential => {
-          
-        // Signed in
-        // disply the name and user name
-            const user = userCredential.user;
-            user.updateProfile({
-                displayName: displayName,
-            });
-            setLoading(false);
-            navigation.navigate("Home");
-            // 
-            
-          
-         
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+  // user account created ... now create a user profile
+      const user = userCredential.user;
+      const db = getFirestore();
+   
+      await setDoc(doc(db, "users", user.uid), {
+        name: name,
+        password: password,
+        email: email,
+        PhoneNumber: PhoneNumber,
+        
+        //fromDate fromDate is a timestamp
+        // fromDate: firebase.firestore.FieldValue.serverTimestamp(),
 
-        // ...
+        createdAt: new Date().toISOString(),
 
-        setLoading(false);
-        console.log(user);
-
-        // ...
-      })
-      .catch(error => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        setLoading(false);
-        setError(errorMessage);
-        // ..
+        userImg: null,
       });
-  };
+      setLoading(false);
+      alert("User account created & signed in!");
+      navigation.navigate("HomeScreen");
 
-  const handleValidEmail = (val: string) => {
-    if (val.trim().length >= 4) {
-      setIsValidEmail(true);
-    } else {
-      setIsValidEmail(false);
+    } catch (error) {
+      console.log('====================================');
+      console.log(error);
+      console.log('====================================');
+      alert(error);
     }
+    setLoading(false);
+
   };
 
-  const handleValidUserName = (val: string) => {
-    if (val.trim().length >= 4) {
-      setisValidUserName(true);
-    } else {
-      setisValidUserName(false);
-    }
-  };
-
-  //       .catch(error => {
-  //         const errorCode = error.code;
-  //         const errorMessage = error.message;
-  //         console.log(errorCode, errorMessage);
-  //         setError(errorCode);
-  //         setLoading(false);
-
-  //         setTimeout(() => {
-  //           setError("");
-  //         }, 4000);
-  //         // ..
-  //       });
-  //   };
-
+/* Checking if the user is logged in or not. If the user is logged in, it will navigate to the
+HomeScreen. */
   React.useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, user => {
       if (user) {
-        navigation.navigate("Home");
+        navigation.navigate("HomeScreen");
       }
     });
     return unsubscribe;
@@ -149,17 +126,30 @@ const Sing = ({navigation}: any) => {
               color="#EAB308"
               size={20}
             />
+            {
+              // this is the name input and the name is required
+              //
+            }
             <TextInput
-              placeholder="name"
+              placeholder="Your Name"
               style={styles.textInput}
-                          autoCapitalize="none"
-                          onChangeText={val => {
-                              setdisplayName(val);
-                          }}
-      
-              value={displayName}
+              autoCapitalize="none"
+              onChangeText={text => {
+                setname(text);
+                if (text.length >= 4) {
+                  setisValidUserName(true);
+                } else {
+                  setisValidUserName(false);
+                }
+              }}
               placeholderTextColor="#fff"
             />
+
+            {isValidUserName ? (
+              <Animatable.View animation="bounceIn">
+                <FontAwesome name="check-circle" color="green" size={20} />
+              </Animatable.View>
+            ) : null}
           </View>
           <View style={[styles.action, {marginTop: 20}]}>
             <FontAwesome
@@ -168,41 +158,61 @@ const Sing = ({navigation}: any) => {
               color="#EAB308"
               size={20}
             />
+            {
+              // this is the email input and the email is required
+            }
 
             <TextInput
-              placeholder="Email"
+              placeholder="Your Email"
               style={styles.textInput}
-              placeholderTextColor="#fff"
-              onChangeText={val => setemail(val)}
               value={email}
+              autoCapitalize="none"
+              onChangeText={text => {
+                setemail(text);
+                // this is the email validation
+                if (text.includes("@") && text.includes(".")) {
+                  setIsValidEmail(true);
+                } else {
+                  setIsValidEmail(false);
+                }
+              }}
+              placeholderTextColor="#fff"
             />
+
+            {isValidEmail ? (
+              <Animatable.View animation="bounceIn">
+                <FontAwesome name="check-circle" color="green" size={20} />
+              </Animatable.View>
+            ) : null}
           </View>
 
           <View style={[styles.action, {marginTop: 20}]}>
             <FontAwesome name="lock" color="#EAB308" size={20} />
+            {
+              // this is the password input and the password is required
+            }
 
             <TextInput
-              placeholder="Password"
-              secureTextEntry={true}
+              placeholder="Your Password"
               style={styles.textInput}
-              placeholderTextColor="#fff"
-              onChangeText={password => setPassword(password)}
               value={password}
+              autoCapitalize="none"
+              onChangeText={text => {
+                setPassword(text);
+              }}
+              secureTextEntry={secureTextEntry ? true : false}
+              placeholderTextColor="#fff"
             />
 
-            <Animatable.View animation="bounceIn">
-              <TouchableOpacity
-                onPress={() =>
-                  setPassword(setsecureTextEntry(!secureTextEntry))
-                }
-              >
-                {secureTextEntry ? (
-                  <FontAwesome name="eye-slash" color="#fff" size={18} />
-                ) : (
-                  <FontAwesome name="eye" color="#fff" size={18} />
-                )}
-              </TouchableOpacity>
-            </Animatable.View>
+            <TouchableOpacity
+              onPress={() => setsecureTextEntry(!secureTextEntry)}
+            >
+              {secureTextEntry ? (
+                <FontAwesome name="eye-slash" color="grey" size={20} />
+              ) : (
+                <FontAwesome name="eye" color="grey" size={20} />
+              )}
+            </TouchableOpacity>
           </View>
 
           <View style={styles.button}>
@@ -229,7 +239,7 @@ const Sing = ({navigation}: any) => {
               Already have an account?
             </Text>
             <TouchableOpacity
-              onPress={() => navigation.navigate("Login")}
+              onPress={() => navigation.navigate("LogIN")}
               style={{
                 marginTop: 10,
                 backgroundColor: "#EAB308",

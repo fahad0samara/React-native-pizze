@@ -29,6 +29,9 @@ import LoadingCart from "../screens/cart/LoadingCart";
 import Payment from "../screens/cart/Payment";
 import LoadingPayment from "../screens/cart/LoadingPayment";
 import Sing from "../screens/auth/Sing";
+import LogIN from "../screens/auth/LogIN";
+import EditProfileScreen from "../screens/portfolio/EditProfileScreen";
+
 
 export default function Navigation({}: {}) {
   return (
@@ -55,8 +58,18 @@ function RootNavigator() {
         }}
       />
       <Stack.Screen
+        name="LogIN"
+        component={LogIN}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
         name="HomeScreen"
         component={HomeScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="EditProfileScreen"
+        component={EditProfileScreen}
         options={{headerShown: false}}
       />
       <Stack.Screen
